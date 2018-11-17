@@ -1,0 +1,2005 @@
+return false;'|||||return true; 
+encryptionproperties.remove(property);'|||||return null; 
+'||||| 
+'|||||return null; 
+super.uninstalllisteners(); menuitem.removepropertychangelistener(this);'|||||super.uninstalllisteners(); super.uninstalllisteners(); 
+'||||| 
+return geticon(radio_button_icon);'||||| 
+return iseditable();'|||||return mnemonic; 
+return fgrammardescription.makeclone();'|||||return fgrammardescription.makeclone(); 
+return varbinds.elements();'|||||return varbinds.indexof(varbind); 
+methodhandlenatives.setcallsitetargetvolatile(this, newtarget);'|||||return newtarget); 
+amethodiscalled();'|||||m_handler.setcontenthandler(ch); 
+encryptionmethodinformation.remove(info);'|||||return this; 
+return actioncommand;'|||||return null; 
+return in.read_principal();'|||||return false; 
+return flocator.getpublicid();'||||| 
+return form;'|||||return false; 
+couldthrowsaxexception();'||||| 
+return m_exptype.elementat(identity);'|||||return fschemadomparser.getdocument(); 
+couldthrowsaxexception(qname);'|||||couldthrowsaxexception(); 
+return null;'||||| 
+super.addnotify(); enableevents(awtevent.key_event_mask);'|||||super.addnotify(); 
+'|||||return gnomelayoutstyle.instance; 
+'|||||return errorwriter; 
+c.removepropertychangelistener(this);'|||||super.uninstalllisteners(); super.uninstalllisteners(); 
+return referencenode;'|||||return referencetransforms; 
+'|||||amethodiscalled(); 
+return date;'|||||return datetime; 
+'||||| 
+fsaxlocatorwrapper.setlocator(locator);'|||||super.setdocumentlocator(arg0); m_saxhandler.setdocumentlocator(arg0); 
+return nodelistgetlength();'|||||return nodelistitem(index); 
+'||||| 
+return 0.5f;'|||||amethodiscalled(); 
+return null;'|||||return null; 
+checkinitialized(); super.foreach(action);'|||||return null; 
+return name;'|||||return name; 
+return false;'|||||return model; 
+return 0.5f;'|||||return m_dtmmanager.getdtmidentity(dtm); 
+return keysize;'|||||return false; 
+couldthrowsaxexception();'|||||couldthrowsaxexception(); 
+return encryptionconstants.encryptionspecns;'|||||return constants.signaturespecns; 
+couldthrowsaxexception();'|||||m_handler.addattributes(atts); 
+'|||||return fisfragmentresolved; 
+return getfontmetrics(tabcontext.getstyle().getfont(tabcontext));'|||||return graphics.getfontmetrics(); 
+printerror("error", ex);'|||||printerror("error", ex); 
+return fnamespacecontext;'|||||return fstreamreader.getnamespacecontext(); 
+listenerlist.add(itemlistener.class, l);'|||||return map.values(); 
+return future.isdone();'|||||return map.isempty(); 
+return constants._tag_retrievalmethod;'|||||return constants._tag_signatureproperty; 
+return _exception;'|||||return super.codepointbefore(index); 
+e.consume();'||||| 
+couldthrowsaxexception();'||||| 
+'|||||amethodiscalled(); 
+return geticon(tree_expanded_icon);'|||||return super.createbuttonlistener(b); 
+couldthrowsaxexception();'|||||couldthrowsaxexception(); 
+return fentityscanner.getcolumnnumber();'|||||return return fstreamreader.getattributecount(); 
+return typecodes[i];'|||||return null; 
+in.close(); monitor.close();'|||||flush(); out.close(); 
+return (_mask);'|||||return aliases; 
+return true;'|||||return model; 
+return object;'|||||return eventhandler; 
+return hascache();'||||| 
+'||||| 
+return null;'|||||return m_attributenode.getnodevalue(); 
+return constants._tag_keyname;'|||||return constants._tag_signatureproperty; 
+runto(i);'||||| 
+'|||||return null; 
+updatestyle(scrollpane);'|||||updatestyle(c); 
+amethodiscalled();'||||| 
+couldthrowsaxexception(qname);'|||||couldthrowsaxexception(); 
+encryptionmethodinformation.add(info);'|||||return ciphertype; 
+return scopes;'|||||return exceptiontypes.clone(); 
+return constants._tag_derencodedkeyvalue;'|||||return constants._tag_signatureproperty; 
+return null;'|||||return null; 
+return varbinds.elements();'|||||return isnew; 
+return value1.equals(value2);'|||||return reqpdu; 
+super.setdocumentlocator(arg0);'|||||return; 
+return type.int;'|||||return type.long; 
+return true;'|||||return dtm.getnodename(node); 
+basichtml.updaterenderer(c, "");'|||||basichtml.updaterenderer(menuitem, 
+'||||| 
+return mbean.setattributes(attributes);'|||||return mbean.getattribute(attribute); 
+return _uriresolver;'|||||return s.iscyclic(l); 
+return !this.alreadyreturned;'|||||return referencelist; 
+'|||||couldthrowsaxexception(); 
+return geticon(check_box_icon);'||||| 
+return constants.signaturespec11ns;'|||||return constants.signaturespecns; 
+return temporal.issupported(this);'|||||return temporal.issupported(epoch_day); 
+return null;'|||||return null; 
+return constants._tag_digestmethod;'|||||return constants._tag_signatureproperty; 
+return getpackageinfo().getannotations();'|||||return getdeclaredannotations(); 
+return null;'|||||return null; 
+return _errorlistener;'|||||return form.editor(); 
+updatestyle(c);'|||||updatestyle(c); 
+'||||| 
+super.installlisteners(); menuitem.addpropertychangelistener(this);'|||||super.installlisteners(); header.addpropertychangelistener(this); 
+return "checkboxmenuitem";'|||||return "radiobuttonmenuitem"; 
+'|||||basichtml.updaterenderer(menuitem, l); 
+'||||| 
+super.installlisteners(); progressbar.addpropertychangelistener(this);'|||||super.installlisteners(); header.addpropertychangelistener(this); 
+return constants._tag_rsakeyvalue;'|||||return constants._tag_signatureproperty; 
+listenerlist.remove(actionlistener.class, l);'||||| 
+return node;'|||||return url; 
+return xmlsignature.algo_id_signature_rsa_sha1;'|||||return xmlsignature.algo_id_signature_rsa_sha512; 
+return windowspreferences.systemroot;'|||||return windowspreferences.userroot; 
+return _templates;'|||||return s.iscyclic(l); 
+return fchild;'|||||return fchild; 
+'|||||couldthrowsaxexception(); 
+return getpackageinfo().getdeclaredannotations();'|||||return annotationparser.toarray(annotationdata().declaredannotations); 
+super.uninstalllisteners(); progressbar.removepropertychangelistener(this);'|||||super.uninstalllisteners(); super.uninstalllisteners(); 
+return null;'|||||return m_isinvaliditeratorstate; 
+return type.double;'|||||return type.long; 
+fireactionperformed(event);'|||||optionpane.setinputvalue(((jtextfield) e.getsource()).gettext()); 
+'|||||return model; 
+return m_attributenode.hasattributes();'|||||couldthrowsaxexception(); 
+return null;'|||||return null; 
+throw wrapper.giopversionerror();'|||||return socket; 
+return m_expr;'|||||return m_expr; 
+return workqueuemonitoredobject;'|||||return threadpoolmonitoredobject; 
+couldthrowsaxexception();'|||||couldthrowsaxexception(); 
+updatestyle(menuitem);'|||||updatestyle(c); 
+amethodiscalled();'|||||return m_next; 
+return m_right;'|||||return m_expr; 
+return getglobalgroupdecl(name);'|||||return getglobalelementdecl(name); 
+return fnamespaceslist;'|||||return getglobalelementdecl(name); 
+updatestyle(optionpane);'|||||updatestyle(c); 
+return graphics.getfontmetrics(f);'|||||return graphics.getfontmetrics(); 
+super.fixupvariables(vars, globalssize);'|||||couldthrowsaxexception(); 
+return with(isodate.plusyears(years));'|||||return with(isodate.plusyears(years)); 
+return flocator.getlinenumber();'|||||return flocator.getlinenumber(); 
+throw abort.instance;'|||||couldthrowsaxexception(); 
+return offset;'|||||return eventhandler; 
+super.uninstalllisteners(); menubar.removepropertychangelistener(this);'|||||super.uninstalllisteners(); super.uninstalllisteners(); 
+return null;'|||||return m_attributenode.getprefix(); 
+return position;'|||||return return errorwriter; 
+return type.byte;'|||||return type.long; 
+return type.float;'|||||return type.long; 
+a.addattribute(alignment, integer.valueof(align));'||||| 
+return map.entryset();'|||||return getpreferredsize(c); 
+return fstreamreader.geteventtype();'|||||return fstreamreader.getcharacterencodingscheme(); 
+slider.repaint();'|||||scrollbar.repaint(); 
+return this.certs.get(this.i++);'|||||return ciphertype; 
+return true;'|||||return false; 
+amethodiscalled();'|||||couldthrowsaxexception(); 
+return dtm.getlocalname(node);'|||||return m_attributenode.getprefix(); 
+return null;'|||||amethodiscalled(); 
+return methodhandleimpl.intrinsic.none;'|||||return null; 
+return type.void;'|||||return xmlsignature.algo_id_signature_rsa_sha384; 
+return true;'|||||return true; 
+return impl.getsize();'|||||return objects.size(); 
+return implementedtransformuri;'|||||return xmlsignature.algo_id_signature_rsa_sha512; 
+return flocator.getcolumnnumber();'|||||return flocator.getcolumnnumber(); 
+return this.signaturealgorithm.getprovider().getname();'|||||return this.signaturealgorithm.getprovider().getname(); 
+return fleftchild;'|||||return fleftchild; 
+fireeditingcanceled();'|||||fireeditingcanceled(); 
+return kanonce;'|||||return this; 
+return false;'|||||return true; 
+'||||| 
+return null;'|||||amethodiscalled(); 
+setselectedindex(-1);'|||||return _systemid; 
+return makedynamicinvoker();'|||||return makedynamicinvoker(); 
+'||||| 
+impl.write(b);'||||| 
+return getglobalattributegroupdecl(name);'|||||return getglobaltypedecl(name); 
+amethodiscalled();'|||||return null; 
+return constants._tag_x509crl;'|||||return constants._tag_signatureproperty; 
+couldthrowsaxexception();'||||| 
+return strictmath.expm1(x);'|||||return false; 
+return flocator.getpublicid();'||||| 
+return white;'|||||return bufferedimageop; 
+return threadpoolmonitoredobject;'|||||return workqueuemonitoredobject; 
+this.add(new mgmtdata(this.doc, mgmtdata));'|||||return contactinfolist.gettargetior(); 
+visitjavaclass(_clazz); _out.flush();'|||||return new 
+return new xmldtdvalidator();'|||||return new uri(tostring()); 
+return false;'|||||return false; 
+'||||| 
+c.paint(g);'||||| 
+return offsettoobjectmap.containskey(new integer(offset));'|||||return new 
+return (double) ctrlx2;'|||||return ctrlx2; 
+return (double) y1;'|||||return y1; 
+return inputtext;'|||||return text; 
+return fstreamreader.getattributevalue(index);'|||||this.index = index; 
+return e;'|||||return null; 
+return m_indentamount;'|||||return getmodelwrapper().getmodel(); 
+super.setparser(parser); _left.setparser(parser); _right.setparser(parser);'||||| 
+return constants._tag_object;'|||||return constants._tag_signatureproperty; 
+return m_attributenode.getchildnodes();'|||||return new dtmchilditernodelist(dtm, node); 
+args.set(argnum, newspec);'|||||throw new dtmdomexception(domexception.not_supported_err); 
+return new point2d.double(x2, y2);'|||||return new point2d.float(x2, y2); 
+amethodiscalled();'|||||amethodiscalled(); 
+return type.double;'|||||return type.float; 
+return fnamespaceitem;'|||||return null; 
+return this.crtcoefficient;'|||||return this.crtcoefficient; 
+throw new org.omg.corba.no_implement(reason);'|||||throw new org.omg.corba.no_implement(reason); 
+listenerlist.add(actionlistener.class, l);'|||||listenerlist.add(actionlistener.class, l); 
+return new aload(0);'|||||return new 
+return new point2d.double(x1, y1);'|||||return new point2d.float(x1, y1); 
+return;'|||||return; 
+firetablechanged(event);'|||||return _action_table; 
+return isidattribute();'|||||return null; 
+_loadedclasses.remove(clazz.getclassname());'|||||loadedclasses.remove(clazz.getclassname()); 
+return codesetconversion.impl().getbtcconverter(osfcodesetregistry.iso_8859_1, impl.islittleendian());'|||||return 
+return systemid;'|||||fsystemid; fsystemid; 
+suntoolkit.flushpendingevents(appcontext); posteventprivate(theevent);'|||||return new xmldtdscannerimpl(); 
+return enumrowstatus.getrsstringtable();'|||||return false; 
+return values;'|||||return null; 
+return getcontext(c, getcomponentstate(c));'|||||return getcontext(c, getcomponentstate(c)); 
+return false;'|||||return true; 
+return 0;'|||||return false; 
+return new point2d.double(x1, y1);'|||||return new point2d.float(x1, y1); 
+return (iterator.getlast());'|||||return this; 
+return id;'|||||return id; 
+return rolename;'|||||return name; 
+return dtm.getnodevalue(node).length();'|||||return fstrings.size(); 
+exception_vec.remove(c);'||||| 
+return name;'|||||return representation; 
+super.accept(v); v.visitdstore(this);'|||||v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_icmpgt(this); 
+return null;'|||||return this; 
+this.type = type;'|||||flocale = locale; 
+return fields;'|||||return fields; 
+'||||| 
+toset.setto(fchild.firstpos());'|||||toset.setto(fchild.firstpos()); 
+_handler.characters(ch, start, length);'|||||return impl.read_value(); 
+return type;'|||||return type; 
+return getglobaltypedecl(name);'|||||return (xsobjectlist) 
+roundingmode = r;'|||||throw new unsupportedoperationexception(); 
+this.userdata = userdata;'|||||factivegrammar = seq; 
+return datetime.getsecond();'|||||return time.getsecond(); 
+return referencelist;'|||||return new 
+return new xmldocumentscannerimpl();'|||||return null; 
+listeners.addelement(l);'|||||return null; 
+couldthrowsaxexception(); return false;'|||||amethodiscalled(); 
+return m_exprs[m_index];'|||||return m_expr; 
+return descendingmap().navigablekeyset();'|||||return super.codepointcount(beginindex, 
+return getmodelwrapper().getrowcount();'|||||return model; 
+maybeupdatelayoutstate(); return convertlocationtomodel(location.x, location.y);'|||||objects.requirenonnull(annotationclass); return annotationclass.cast(declaredannotations().get(annotationclass)); 
+return getcontext(c, getcomponentstate(c));'|||||return getcontext(c, getcomponentstate(c)); 
+'|||||couldthrowsaxexception(); 
+'|||||return 
+return new double(bytes);'|||||return new long(bytes); 
+return max;'|||||return getmodelwrapper().getmodel(); 
+return key;'|||||return defaultpolicy; 
+return transferhandler;'|||||return (transferhandler) getclientproperty(jcomponent_transfer_handler); 
+return rolevalue;'|||||return objectnamelist; 
+super.uninstalllisteners(); toolbar.removepropertychangelistener(this);'|||||super.uninstalllisteners(); menubar.removepropertychangelistener(this); 
+super.unconfigureeditor(); editor.removemouselistener(rolloverlistener);'|||||return (double) 
+listenerlist.remove(changelistener.class, l);'|||||return l); 
+super.installdefaults(); updatestyle(getcomponent()); getcomponent().addfocuslistener(handler);'|||||updatestyle(c); 
+v.visitstackinstruction(this); v.visitdup_x1(this);'|||||v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_icmpgt(this); 
+getrootpane().setcontentpane(contentpane);'|||||throw new unsupportedoperationexception(); 
+fgrammarpool = grammarpool;'||||| 
+'|||||return super.replace(offset, views); 
+return new validationmanager();'|||||return new validationmanager(); 
+return x;'|||||return x; 
+return dtm.getnodename(node);'|||||return false; 
+'|||||return; 
+return sync.getcount();'|||||return messagetype; 
+'|||||couldthrowsaxexception(); 
+return swingutilities2.tabbedpanechangefocusto(getvisiblecomponent());'|||||amethodiscalled(); return this; 
+return y2;'|||||return y2; 
+return defaultoption;'|||||return bresolver; 
+maxrepetitions = i;'|||||collapse(true); = null; 
+return factory.instance;'|||||return corereflectionfactory.make(this, 
+return nodelistgetlength();'|||||return fstrings.size(); 
+return fcmsource;'|||||return fdtdcontentmodelsource; 
+return (double) x2;'|||||return x2; 
+return serviceprovider;'|||||return engine; 
+return null;'|||||return fisfragmentresolved; 
+throw new unsupportedoperationexception();'|||||throw new unsupportedoperationexception(); 
+return (kernel) kernel.clone();'|||||return representation; 
+return this.primeexponentq;'|||||return this.primeexponentq; 
+return type.double;'|||||return type.float; 
+throw new xmlsignatureexception("algorithms.hmacoutputlengthonlyforhmac");'|||||encryptionmethodinformation.add(info); 
+return attribute.getvalue();'|||||return year; 
+'||||| 
+write(b, 0, b.length);'|||||write(b, 0, b.length); 
+super.accept(v); v.visitdload(this);'|||||v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_icmpgt(this); 
+return new if_icmpne(target);'|||||return new iflt(target); 
+'||||| 
+couldthrowsaxexception();'|||||amethodiscalled(); 
+return id;'|||||return id; 
+getrootpane().setcontentpane(contentpane);'|||||throw new unsupportedoperationexception(); 
+return extent;'|||||return this; 
+return domparser;'|||||return = 
+return empty_map;'|||||return empty_set; 
+fsystemid = systemid;'|||||this.m_indentamount = direction; 
+scrollbar.repaint();'|||||setfocusindex(tabpane.getselectedindex(), true); 
+haderror = false;'|||||in.reset(); 
+super.uninstalllisteners(); optionpane.removepropertychangelistener(this);'|||||super.uninstalllisteners(); menubar.removepropertychangelistener(this); 
+attribs.add(x);'|||||attribs.add(x); 
+return (simpledateformat) ((dateformatter) (gettextfield().getformatter())).getformat();'|||||return (decimalformat) ((numberformatter) (gettextfield().getformatter())).getformat(); 
+fsaxlocatorwrapper.setlocator(locator);'|||||amethodiscalled(); 
+elmdecl.addidconstraint(decl); fglobalidconstraintdecls.put(decl.getidentityconstraintname(), decl);'|||||return fglobalidconstraintdecls.getlength() 
+return (_mask);'|||||return mask; 
+return false;'|||||return true; 
+return internalremovenameditem(name, true);'||||| 
+return true;'|||||return false; 
+return null;'|||||return null; 
+return getcontext(c, synthlookandfeel.getcomponentstate(c));'|||||return getcontext(c, getcomponentstate(c)); 
+return (snmpvalue) clone();'|||||return (snmpvalue) clone(); 
+listenerlist.add(adjustmentlistener.class, l);'|||||write(string.valueof(i)); 
+return null;'|||||return null; 
+return fstreamreader.getpitarget();'|||||return fstreamreader.getprefix(); 
+allwhitespace = true;'||||| 
+'|||||return uimanager.getui(this)); 
+return fwhattoshow;'|||||return makenodehandle(_firstch(0)); 
+return new motifsliderui((jslider) b);'|||||return new xmldtdprocessor(); 
+return nonrepeaters;'|||||return nonrepeaters; 
+v.visitstackproducer(this); v.visitpushinstruction(this); v.visitstackinstruction(this); v.visitdup2(this);'|||||v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_icmpgt(this); 
+return getpreferredsize(c);'|||||return actioncommand; 
+super.enddocument();'|||||return exportentry(getfirstentry()); 
+return fschemaloader.getparameter(name);'|||||return fattrgrp.getattributeuse(namespace, 
+amethodiscalled(); return null;'|||||return null; 
+super.seticonimage(image);'|||||super.seticonimage(image); 
+return new motifpropertychangelistener();'|||||return new point2d.float(x2, 
+displayformat = atf;'||||| = dtdhandler; 
+return get(dst, 0, dst.length);'|||||return get(dst, 0, dst.length); 
+checkkeycodeargument(keycode); peer.keypress(keycode); afterevent();'|||||return new 
+return null;'|||||return null; 
+_uriresolver = resolver;'|||||_uriresolver = i; 
+return day;'|||||return datetime.getdayofmonth(); 
+return new motifsplitpanedivider(this);'|||||return new windowssplitpanedivider(this); 
+return new serializationproxy(this);'|||||return new serializationproxy(this); 
+return compileoperation(new plus(), oppos);'|||||return compileoperation(new notequals(), oppos); 
+return fstreamreader.getattributelocalname(index);'|||||return fstreamreader.getnamespaceprefix(index); 
+return encoded.clone();'|||||return mencoded.clone(); 
+amethodiscalled(); return 0;'|||||amethodiscalled(); 
+throws_vec.clear();'|||||exception_vec.clear(); 
+return new descendingiterator();'|||||return super.lastindexof(str, 
+return _contents;'|||||return _contents; 
+return new xssimpletypedecl();'|||||return false; 
+return ftype;'|||||return reqpdu; 
+fentitymanager.setentityhandler(this); fentitymanager.startdocumententity(inputsource); setscannerstate(xmlevent.start_document);'|||||defaultformat = atf; 
+this.add(new keyvalue(this.doc, pk));'|||||return 
+this.constructionelement.appendchild(derencodedkeyvalue.getelement()); xmlutils.addreturntoelement(this.constructionelement);'|||||this.add(new keyvalue(this.doc, rsakeyvalue)); 
+return fnodeindex;'|||||return fnodeindex; 
+maxrepetitions = max;'|||||throw new clonenotsupportedexception(); 
+return new xnumber(math.ceil(m_arg0.execute(xctxt).num()));'|||||return new xnumber(java.lang.math.floor(m_arg0.execute(xctxt).num())); 
+return null;'|||||return this; 
+_iswarningerror = flag;'|||||return true; 
+error(xmlerrorresources.er_function_not_supported);'|||||error(xmlerrorresources.er_function_not_supported); return null; 
+return true;'|||||return true; 
+super.insert(offset, c); return this;'|||||super.insert(dstoffset, s); return this; 
+return new idassignmentpolicyimpl(value);'|||||return new threadpolicyimpl(value); 
+return new if_acmpeq(target);'|||||return new iflt(target); 
+fextrachecking = newvalue;'|||||return ftokennames.get(token); 
+'||||| 
+super.installlisteners(); chooser.addpropertychangelistener(this);'|||||super.installlisteners(); popupmenu.addpropertychangelistener(this); 
+couldthrowsaxexception(arg0, arg1, arg2);'|||||couldthrowsaxexception(); 
+return (string) type;'|||||return null; 
+this.constructionelement.appendchild(xmlx509digest.getelement()); xmlutils.addreturntoelement(this.constructionelement);'|||||this.add(new keyvalue(this.doc, rsakeyvalue)); 
+mda.update((byte) arg0);'|||||write(arg0, 0, arg0.length); 
+return type;'|||||return type; 
+amethodiscalled(); return null;'|||||amethodiscalled(); 
+return windowspreferences.userroot;'|||||return windowspreferences.systemroot; 
+reportfatalerror("prematureeof", null);'|||||return 
+return fstreamreader.getattributeprefix(index);'|||||return fstreamreader.getnamespaceuri(index); 
+return this;'|||||return image; 
+paint(g);'|||||paint(g); 
+this.reader = reader;'|||||return getfontmetrics(tabcontext.getstyle().getfont(tabcontext)); 
+return holder.gethostname();'|||||return formatter.getlocale(); 
+'||||| 
+return setattributenode(newattr);'|||||return 
+_preserveemptyattributes = preserve;'||||| 
+v.visitimpdep2(this);'|||||v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_icmpgt(this); 
+return filemanager.issamefile(a, b);'|||||return global.getuserdata(); 
+return removefirst();'|||||return screennullresult(peeklast()); 
+log(level.finer, msg);'|||||logp(level.finer, msg); 
+return new longiteratorspliterator(objects.requirenonnull(iterator), characteristics);'|||||return new doubleiteratorspliterator(objects.requirenonnull(iterator), characteristics); 
+'||||| 
+return (treestatenode) visiblenodes.elementat(row);'|||||return node; 
+return null;'|||||return null; 
+return this.primep;'|||||return this.primep; 
+basichtml.updaterenderer(menuitem, "");'|||||return 
+return password;'|||||return value; 
+return false;'|||||return s.iscyclic(l); 
+this.inner_class_index = inner_class_index;'|||||broadcaster.removenotificationlistener(listener, = null; 
+fdtdsource = source;'|||||return getprefix(uri, 
+this.parent = map;'|||||this.parent = map; 
+this.add(new keyname(this.doc, keynamestring));'||||| 
+this.add(new keyvalue(this.doc, pk));'|||||this.add(new keyvalue(this.doc, rsakeyvalue)); 
+super.removenotify(); eventcontroller.updateawteventlistener(eventmask, 0);'|||||super.removenotify(); 
+return new point2d.float(ctrlx2, ctrly2);'|||||return new point2d.double(ctrlx2, ctrly2); 
+return fdtdhandler;'|||||return fdtdhandler; 
+return type.byte;'|||||return type.float; 
+return getcontext(c, synthlookandfeel.getcomponentstate(c));'|||||return getcontext(c, getcomponentstate(c)); 
+return errorstatus;'|||||return errorstatus; 
+attribs.add(x);'|||||write(lineseparator); 
+return new directorycomboboxmodel();'|||||return new directorycomboboxmodel(); 
+return getanonymouslogger(null);'|||||return 0; 
+return coderresult.underflow;'|||||return coderresult.underflow; 
+return selectionmode;'||||| 
+return identifier.equalsignorecase(mappedcontainername);'|||||throw wrapper.genericnoimpl(); 
+sync.lock();'|||||sync.acquireshared(1); 
+return getcontext(c, synthlookandfeel.getcomponentstate(c));'|||||return getcontext(c, getcomponentstate(c)); 
+return m_arg2;'|||||return m_expr; 
+super.paint(g, getcomponent());'||||| 
+return getbounds2d().getbounds();'|||||return getbounds2d().getbounds(); 
+return height;'|||||return (double) height; 
+return catalog;'|||||return catalog; 
+join(inetaddr, null);'||||| 
+return m_attributenode.getfirstchild();'|||||return new 
+referencetransforms = transforms;'|||||return 
+exp.exprsetparent(filterexpriteratorsimple.this); m_expr = exp;'|||||exp.exprsetparent(funcextfunction.this); m_exp = exp; 
+amethodiscalled(); return null;'|||||amethodiscalled(); return false; 
+line_number_vec.remove(l);'|||||listenerlist.remove(popupmenulistener.class, 
+throw new dtmdomexception(domexception.not_supported_err);'|||||throw = class_name_index; 
+eventqueue.invokelater(dorun);'|||||_systemid = id; 
+return priority;'|||||return image; 
+return fnamespacesenabled;'|||||return value; 
+return this.factualvalue;'|||||return this.factualvalue; 
+return serialnumber;'|||||return representation; 
+a.addattribute(abstractdocument.elementnameattribute, componentelementname); a.addattribute(componentattribute, c);'|||||jcomp = comp; 
+return root;'|||||return paintfocus; 
+return fparentxincludehandler;'|||||return parent; 
+return getbounds2d().getbounds();'|||||return getbounds2d().getbounds(); 
+return contains(p.getx(), p.gety());'|||||return contains(p.getx(), p.gety()); 
+return y1;'|||||return y1; 
+return new gtkfilechooserui((jfilechooser) c);'|||||return new basicinternalframeui((jinternalframe) b); 
+listenerlist.add(listselectionlistener.class, l);'|||||return expandediconwrapper; 
+'||||| 
+v.visittypedinstruction(this); v.visitstackproducer(this); v.visitstackconsumer(this); v.visitfcmpl(this);'|||||v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_icmpgt(this); 
+amethodiscalled(); return null;'|||||return getprefix(uri, 
+return canonicalizer.algo_id_c14n_excl_with_comments;'|||||return xmlsignature.algo_id_signature_rsa_ripemd160; 
+return legacygetserverport(type, false);'|||||return false; 
+return id;'|||||return parent; 
+amethodiscalled();'|||||amethodiscalled(); 
+return canonicalizer.algo_id_c14n_omit_comments;'|||||return xmlsignature.algo_id_signature_rsa_ripemd160; 
+return fattrgrp.getattributewildcard();'|||||return fattributewc; 
+return impl.read_boolean();'|||||return read_abstract_interface(); 
+this.signature_index = signature_index;'|||||this.signature_index = signature_index; 
+error(xmlerrorresources.er_function_not_supported); return null;'|||||error(xmlerrorresources.er_function_not_supported); return null; 
+couldthrowsaxexception();'|||||flush(); m_handler.flushpending(); 
+return null;'|||||return this; 
+'||||| 
+v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_icmplt(this);'|||||v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_icmpgt(this); 
+return (parallelgroup) super.addgroup(group);'|||||return (sequentialgroup) super.addgroup(group); 
+return (attributeset) table.get(styleconstants.resolveattribute);'|||||return null; 
+return (thaibuddhistdate) super.resolvedate(fieldvalues, resolverstyle);'|||||return (minguodate) super.resolvedate(fieldvalues, resolverstyle); 
+return sequencenumber;'|||||return _contents; 
+ois.defaultreadobject(); needssyncchildren(false);'|||||ois.defaultreadobject(); needssyncchildren(false); 
+this.constructionelement.appendchild(element); xmlutils.addreturntoelement(this.constructionelement);'|||||this.constructionelement.appendchild(element); xmlutils.addreturntoelement(this.constructionelement); 
+return new serializationproxy(this);'|||||return new serializationproxy(this); 
+c.addpropertychangelistener(this);'|||||super.installlisteners(); popupmenu.addpropertychangelistener(this); 
+return name;'|||||return inputname; 
+return type.gettype(getsignature(cpg));'|||||return type.float; 
+return new if_icmpgt(target);'|||||return new iflt(target); 
+return class_name;'|||||return superclass_name_index; 
+'|||||parse(new inputsource(systemid)); 
+removeselectionintervalimpl(minindex, maxindex, false);'|||||allchanged(); 
+this.tree = tree;'|||||return tree; 
+return;'||||| 
+return m_nextwalker;'|||||return m_expr; 
+this.add(new keyvalue(this.doc, unknownkeyvalueelement));'|||||return 
+return getnameditem(localname);'|||||add(1l); 
+return new org.omg.iop.taggedcomponent(getid(), getdata());'|||||return implementation; 
+return getprimary2();'|||||return metaltheme.white; 
+'||||| 
+return new metaltreeui();'|||||return new motiffilechooserui((jfilechooser) c); 
+return (counter < size);'|||||return false; 
+'|||||listenerlist.remove(hyperlinklistener.class, l); 
+return super.createbuttonlistener(b);'|||||return new motifbuttonlistener(b); 
+return reutil.createoptionstring(this.options);'|||||return new uri(tostring()); 
+return new incrementalsaxsource_filter(co, controllercoroutineid);'|||||return new motifbuttonlistener(b); 
+return (elementimpl) relations[0][1];'|||||return read_abstract_interface(); 
+super.setfont(font); updatelabelsizes();'|||||return (double) 
+this.linkedexception = exception;'|||||this.linkedexception = exception; 
+return flocale;'|||||return formatter.getlocale(); 
+return bytes;'|||||return bytes; 
+return null;'|||||return = 
+return fcolumnnumber;'|||||return defaultpolicy; 
+super.uninstalllisteners(); progressbar.removepropertychangelistener(this);'|||||super.uninstalllisteners(); menubar.removepropertychangelistener(this); 
+return new motifdesktoppaneui();'|||||return new motifprogressbarui(); 
+return _documentid;'|||||return doc; 
+varbinds.addelement(varbind); global.addvarbind(varbind);'|||||varbinds.addelement(varbind); 
+throw new org.omg.corba.no_implement(reason);'|||||throw new org.omg.corba.no_implement(reason); 
+couldthrowsaxexception();'|||||couldthrowsaxexception(); 
+return (privacystate);'|||||return field; 
+couldthrowsaxexception();'|||||this.startprefixmapping(prefix, uri, true); 
+return _canonicalname.substring(0, _domain_length);'|||||return _preserveemptyattributes; 
+'||||| 
+return null;'|||||return 0; 
+return _tohfactory;'|||||return subjectpublickey; 
+return type.null;'|||||return type.float; 
+return null;'|||||return null; 
+return (properties) _properties.clone();'|||||return _templates; 
+return new filtercomboboxmodel();'|||||return new filtercomboboxmodel(); 
+return false;'|||||return true; 
+return getdocumentroot(context);'|||||return makenodehandle(_firstch(0)); 
+a.addattribute(underline, boolean.valueof(b));'||||| = source; 
+return screennullresult(polllast());'|||||return screennullresult(peeklast()); 
+return oaepparams;'|||||return resolverdirecthttp.properties.clone(); 
+return msg.decodesnmppdu();'|||||return new 
+this.column = col;'||||| 
+'|||||flushbuffer(); m_os.flush(); 
+return divideknuth(b, quotient, true);'|||||amethodiscalled(); 
+super.addnotify(); eventcontroller.updateawteventlistener(0, eventmask);'|||||super.addnotify(); enableevents(awtevent.key_event_mask); 
+securerandomspi.enginesetseed(seed);'|||||return "#" 
+return caret;'|||||return year; 
+receive0(p);'|||||return new motifprogressbarui(); 
+return items.indexof(child);'|||||return menus.indexof(child); 
+super.installlisteners(); list.addpropertychangelistener(this);'|||||super.installlisteners(); popupmenu.addpropertychangelistener(this); 
+return entrytype;'|||||return getrelativecatalogs(); 
+return limit;'|||||return true; 
+return fnamespaceslist;'||||| 
+this.inner_name_index = inner_name_index;'|||||this.add(new = 
+return calendar.gettimezone();'|||||return datetime.getminute(); 
+'||||| 
+return implementedtransformuri;'|||||return implementedtransformuri; 
+return this.crtcoefficient;'|||||return this.crtcoefficient; 
+finputstream.reset();'|||||m_next = 0; 
+this.map = map;'|||||return (transferhandler) 
+return encryptionproperties.iterator();'|||||return 
+error(xmlerrorresources.er_function_not_supported);'|||||error(xmlerrorresources.er_function_not_supported); return null; 
+super.printstacktrace(printstream);'|||||super.printstacktrace(printwriter); 
+return type.getreturntype(getsignature());'|||||return type.float; 
+a.addattribute(italic, boolean.valueof(b));'||||| 
+couldthrowsaxexception();'|||||amethodiscalled(); return null; 
+return arrays.copyof(shortweekdays, shortweekdays.length);'|||||return entry; 
+return leadindex;'|||||return exceptiontypes.clone(); 
+return request.getoperationname();'|||||return !request.isoneway(); 
+return getcontext(c, synthlookandfeel.getcomponentstate(c));'|||||return getcontext(c, getcomponentstate(c)); 
+return new xmlsignatureinput(instream);'|||||kanonce = kanonce; 
+super.uninstalllisteners(); menuitem.removepropertychangelistener(this);'|||||super.uninstalllisteners(); menubar.removepropertychangelistener(this); 
+return this.publicexponent;'|||||return this.publicexponent; 
+return border;'|||||return c; 
+return geticon(tree_expanded_icon);'|||||return ftokennames.get(token); 
+return date.getdayofmonth();'|||||return datetime.getdayofmonth(); 
+return get(getarray(), index);'|||||return return annotationsupport.getdirectlyandindirectlypresent(declaredannotations(), 
+'||||| 
+return new keyreference(uri);'|||||return = size; 
+this.subject = subject;'|||||ferrorreporter.setproperty(error_handler, = selector; 
+return fbusy;'|||||return new dtmnamednodemap(dtm, node); 
+return;'|||||return; 
+_mediatype = mediatype;'|||||this.direction = direction; 
+return ftype;'|||||return imagetype; 
+return m_attributenode.getnodevalue();'|||||return null; 
+return xpathfilterchgpcontainer._tag_xpathchgp;'|||||return inclusivenamespaces._tag_ec_inclusivenamespaces; 
+return datetime.gethour();'|||||return datetime.gethour(); 
+return data;'|||||return buf; 
+return impl.read_fixed(digits, scale);'|||||return = 
+return xmlsignature.algo_id_mac_hmac_sha384;'|||||return implementedtransformuri; 
+m_handler.entityreference(entityname);'|||||couldthrowsaxexception(); 
+m_os.flush();'|||||flushbuffer(); m_os.flush(); 
+throw new org.omg.corba.no_implement(reason);'|||||throw new org.omg.corba.no_implement(reason); 
+amethodiscalled();'|||||amethodiscalled(); return null; 
+return null;'|||||return null; 
+'||||| 
+return fschemapointer;'|||||return m_idattributes; 
+policymappinginhibited = val;'||||| 
+return this.certs.get(this.i++);'|||||return 
+slider.removepropertychangelistener(this); super.uninstalllisteners(slider);'|||||super.uninstalllisteners(); menubar.removepropertychangelistener(this); 
+return bottom;'|||||return lcd; 
+return _errorlistener;'|||||return (composedtextstart 
+error(xmlerrorresources.er_function_not_supported); return 0;'|||||error(xmlerrorresources.er_function_not_supported); return null; 
+return null;'|||||return null; 
+return fnamespaceitem;'|||||return null; 
+return datetime.getminute();'|||||return datetime.getminute(); 
+return super.codepointbefore(index);'|||||return super.indexof(str); 
+return image;'|||||return representation; 
+return getcontext(c, getcomponentstate(c));'|||||return getcontext(c, getcomponentstate(c)); 
+return canonicalizer.algo_id_c14n_physical;'|||||return xmlsignature.algo_id_signature_rsa_ripemd160; 
+return super.getaccessiblecontext();'|||||return rowheader; 
+fdtdhandler = dtdhandler;'|||||fdtdhandler = dtdhandler; 
+return reqpdu.version;'|||||return reqpdu; 
+return new contentdriver();'|||||return new ns11contentdriver(); 
+a.addattribute(abstractdocument.elementnameattribute, iconelementname); a.addattribute(iconattribute, c);'|||||explicitpolicyrequired = val; 
+maybeinitialize(); return getlafstate().multiuidefaults;'|||||return filter; 
+this.pmg_class_index = pmg_class_index;'|||||this.pmg_index = pmg_index; 
+ensurematchercapacity(); fmatchers[fmatcherscount++] = matcher;'||||| 
+return fdocumentsource;'|||||return fdocumentsource; 
+_handler.endprefixmapping(prefix);'|||||_handler.startelement(uri, localname, qname, attributes); 
+return fbytestream;'|||||return this.primep; 
+m_handler.close();'|||||amethodiscalled(); 
+return getcontext(c, getcomponentstate(c));'|||||return getcontext(c, getcomponentstate(c)); 
+exp.exprsetparent(predicatednodetest.this); m_predicates[m_index] = exp;'|||||exp.exprsetparent(funcextfunction.this); m_exp = exp; 
+listenerlist.remove(itemlistener.class, alistener);'|||||listenerlist.remove(itemlistener.class, l); 
+return id;'|||||return id; 
+return new service(null, servicename);'|||||provider(dir).createdirectory(dir, attrs); 
+return s.iscyclic(l);'|||||return s.iscyclic(l); 
+return value;'|||||return value; 
+return new validatorimpl(this);'|||||return columnnumber; 
+error(xmlerrorresources.er_function_not_supported); return null;'|||||error(xmlerrorresources.er_function_not_supported); return null; 
+return name;'|||||return name; 
+inputattributeupdater = new attributetracker();'|||||return new uri(tostring()); 
+amethodiscalled();'|||||m_handler.setcontenthandler(ch); 
+super.installdefaults(); updatestyle(getcomponent()); getcomponent().addfocuslistener(handler);'|||||updatestyle(c); 
+listenerlist.add(itemlistener.class, alistener);'|||||listenerlist.add(itemlistener.class, l); 
+return name;'|||||return name; 
+super.insert(offset, obj); return this;'|||||super.insert(offset, f); return this; 
+return message;'|||||return negativeprefix; 
+keyrecipient = recipient;'|||||return referencenode; 
+throw new xmlsignatureexception("algorithms.hmacoutputlengthonlyforhmac");'|||||encryptionmethodinformation.add(info); 
+'||||| 
+return inclusivenamespaces.exclusivecanonicalizationnamespace;'|||||return transform_xpathfilterchgp; 
+return pos;'|||||return representation; 
+c.removepropertychangelistener(this);'|||||c.removepropertychangelistener(this); 
+return null;'|||||return null; 
+return null;'|||||return null; 
+super.installui(c); updatedisplayproperties(c.getfont(), c.getforeground());'|||||return (double) 
+super.accept(v); v.visitastore(this);'|||||v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_icmpgt(this); 
+return xmlsignature.algo_id_mac_hmac_ripemd160;'|||||return implementedtransformuri; 
+'||||| 
+'||||| 
+methodgen.getinstructionlist().append(nop);'|||||return 
+super.layout(integer.max_value - 1, height);'|||||return 
+basichtml.updaterenderer(menuitem, menuitem.gettext());'|||||checkinitialized(); super.foreach(action); 
+super.addnotify(); keyboardmanager.getcurrentmanager().registermenubar(this);'|||||super.setbackground(c); = c; 
+return new jscrollpane(atable);'|||||return removenameditem(localname); 
+return xmlsignature.algo_id_signature_ecdsa_sha1;'|||||return xmlsignature.algo_id_signature_rsa_ripemd160; 
+this.opcode = opcode;'|||||return menus.indexof(child); 
+return begin + pos;'|||||return representation; 
+return integer.max_value;'|||||return 0; 
+this.issuer = issuer;'|||||fbytestream = bytestream; 
+return;'||||| 
+super.setdocumentlocator(arg0);'|||||return; 
+checkshutdownstate(); throw wrapper.genericnoimpl();'|||||return null; 
+this.digestalgorithm = digestalgorithm;'|||||return target; 
+amethodiscalled();'|||||amethodiscalled(); 
+errorhandler = handler;'|||||ferrorreporter.setproperty(error_handler, = resolver; 
+'|||||this.line = line; 
+return new returnaddresstype(physicalsuccessor());'|||||return returnaddresstype.no_target; 
+error(xmlerrorresources.er_function_not_supported); return null;'|||||error(xmlerrorresources.er_function_not_supported); return false; 
+fdtdhandler = dtdhandler;'|||||fdtdhandler = handler; 
+return m_attributenode.issupported(arg0, arg1);'|||||couldthrowsaxexception(); 
+this.name_index = name_index;'|||||this.name_index = name_index; 
+couldthrowsaxexception();'||||| 
+return m_attributenode.getlastchild();'|||||return null; 
+alive = false;'|||||this.add(new new float(i)); 
+return getglobalnotationdecl(name);'|||||return getglobalattributedecl(name); 
+return (double) archeight;'|||||return archeight; 
+return fselector;'|||||return columnheader; 
+this.bytes = bytes;'|||||this.bytes = bytes; 
+return _contents;'|||||return _contents; 
+'|||||setindex(bytes.readunsignedshort()); opcode = com.sun.org.apache.bcel.internal.constants.ldc_w; 
+referenceinformation.remove(node);'|||||kanonce = keyinfo; 
+'||||| 
+'|||||graphics.dispose(); = null; 
+return this.factualvaluetype;'|||||return this.factualvaluetype; 
+return false;'|||||return true; 
+log(level.warning, msg);'||||| msg); 
+return pos;'|||||return return 
+return key(getlastentry());'|||||return getfirst(); 
+'||||| 
+return screennullresult(peekfirst());'|||||return return 
+return cp.constanttostring(getsignatureindex(), constants.constant_utf8);'|||||return new transformsimpl(); 
+keyinfo = info;'|||||return = i; 
+error(xmlerrorresources.er_function_not_supported); return null;'|||||error(xmlerrorresources.er_function_not_supported); return null; 
+'||||| 
+return _reduce_table;'|||||return _action_table; 
+return attr;'|||||return new 
+return nodename;'|||||return getattributenode(localname); 
+return map.entryset();'|||||return gnomelayoutstyle.instance; 
+return null;'|||||return null; 
+return m.lastkey();'|||||return return 
+return temporal.issupported(this);'|||||return temporal.issupported(this); 
+return true;'|||||return true; 
+return true;'|||||return null; 
+return getcontext(c, getcomponentstate(c));'|||||return getcontext(c, getcomponentstate(c)); 
+return (dtm.null != dtm.getfirstchild(node));'|||||return false; 
+return contains(p.getx(), p.gety());'|||||return contains(p.getx(), p.gety()); 
+return "checkbox.";'|||||return "togglebutton."; 
+throw new org.omg.corba.no_implement();'|||||throw new org.omg.corba.no_implement(reason); 
+basichtml.updaterenderer(c, "");'||||| 
+nonrepeaters = nr;'|||||return = i; 
+return elem.getattributens(nsuri, localname);'|||||return _preserveemptyattributes; 
+this.length = length;'|||||buflen = thelength; 
+return getpattern(true);'|||||return 
+return padding(length, " ");'|||||return tokenize(totokenize, " "); 
+return _contents;'|||||return _contents; 
+revocationenabled = val;'|||||this.direction = direction; 
+couldthrowsaxexception();'|||||amethodiscalled(); 
+error(xmlerrorresources.er_function_not_supported); return null;'|||||error(xmlerrorresources.er_function_not_supported); return null; 
+return compileunary(new com.sun.org.apache.xpath.internal.operations.number(), oppos);'|||||return compileoperation(new div(), oppos); 
+return null;'|||||return null; 
+error(xmlerrorresources.er_function_not_supported);'|||||error(xmlerrorresources.er_function_not_supported); 
+'||||| 
+realeditor.addcelleditorlistener(l);'|||||return encryptionmethod; 
+return _contents;'|||||return _contents; 
+return false;'|||||return false; 
+return new internalerror(message, cause);'|||||return new internalerror(cause); 
+this.endpos[index] = v;'|||||return ftokennames.get(token); 
+return getmaxdescent();'|||||return new 
+return new basicbuttonlistener(b);'|||||return new motifbuttonlistener(b); 
+couldthrowioexception();'|||||return; 
+return contains(p.getx(), p.gety());'|||||return contains(p.getx(), p.gety()); 
+write(string.valueof(l));'|||||write(string.valueof(f)); 
+return this.encodedkey.clone();'|||||return mencoded.clone(); 
+return new point2d.float(x1, y1);'|||||return new point2d.float(x1, y1); 
+return references.iterator();'|||||return carriedname; 
+doclick(68);'|||||return constant_pool; 
+return sum();'|||||return get(); 
+return colormodel.gettransparency();'|||||return transparency; 
+ciphervalue = value;'|||||throw new xmlsignatureexception("algorithms.cannotusealgorithmparameterspeconrsa"); 
+super.accept(v); v.visitistore(this);'|||||v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_icmpgt(this); 
+return (double) y2;'|||||return y2; 
+amethodiscalled();'|||||return return 
+throw new destroyfailedexception();'|||||this.destroy(); 
+throw new unsupportedoperationexception();'|||||writebytes(b, 
+return null;'|||||return null; 
+return new serializationproxy(this);'|||||return new serializationproxy(this); 
+installdefaults((jseparator) c); installlisteners((jseparator) c);'|||||super.installui(c); installdefaults(c); installlisteners(c); 
+super.setdocumentlocator(arg0);'|||||amethodiscalled(); 
+return fscope;'|||||return fscope; 
+return null;'|||||return new 
+return selections;'|||||return handler; 
+return _tfactory;'|||||return policyset; 
+return 3;'|||||return 3; 
+amethodiscalled();'|||||amethodiscalled(); 
+return (double) ctrlx;'|||||return ctrlx; 
+return fschemaloader.getparameternames();'|||||return kind; 
+return new intiteratorspliterator(objects.requirenonnull(iterator), characteristics);'|||||return new doubleiteratorspliterator(objects.requirenonnull(iterator), characteristics); 
+return nested;'|||||return transition.toinstant(offsetbefore); 
+v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitifnonnull(this);'|||||v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_icmpgt(this); 
+a.addattribute(strikethrough, boolean.valueof(b));'|||||explicitpolicyrequired = val; 
+return samplerate;'|||||return new 
+return prompt;'|||||return prompt; 
+return new service(wsdldocumentlocation, servicename);'|||||provider(dir).createdirectory(dir, attrs); 
+return new point2d.double(x2, y2);'|||||return new point2d.float(x2, y2); 
+return strictmath.expm1(x);'|||||return uimanager.getui(this)); 
+return offset;'|||||return (d) 
+return with(isodate.plusyears(years));'|||||return with(isodate.plusyears(years)); 
+return kind;'|||||return kind; 
+return type;'|||||return defaultcursor; 
+return dtm.getnodevalue(node);'|||||return false; 
+return true;'|||||return = 
+super.accept(v); v.visitaload(this);'|||||v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_icmpgt(this); 
+super.addnotify(); configureenclosingscrollpane();'|||||super.addnotify(); 
+frame.setlayout(internalframelayout = createlayoutmanager()); updatestyle(frame);'|||||updatestyle(c); 
+return continuouslayout;'|||||return year; 
+return _contents;'|||||return _contents; 
+fireeditingcanceled();'|||||return 
+this.interface_names = interface_names;'|||||return (element) == servantretentionpolicyvalue._retain; 
+return true;'|||||return true; 
+'||||| 
+return type.float;'|||||return type.float; 
+return getcontext(c, getcomponentstate(c));'|||||return getcontext(c, getcomponentstate(c)); 
+return fnodeindex;'|||||return fnodeindex; 
+return time.getminute();'|||||return datetime.getminute(); 
+return editformat;'|||||return mincrl; 
+return false;'|||||return m_exptype.elementat(identity); 
+return fwhattoshow;'|||||return makenodehandle(_firstch(0)); 
+impl.write_value(value);'|||||return impl._truncatable_ids(); 
+return (type.boolean);'|||||return encryptionconstants._tag_keyreference; 
+return input;'|||||return input; 
+return _errorlistener;'|||||return xpathcontext.this.geterrorlistener(); 
+return null;'|||||return null; 
+_systemid = id;'|||||_systemid = id; 
+return constants._tag_retrievalmethod;'|||||return constants._tag_signatureproperty; 
+return fieldid;'|||||return saturation; 
+return fschemadomparser.getdocument();'|||||return super.getnamespaceforprefix(prefix); 
+return "";'|||||return new 
+return false;'|||||return false; 
+return encryptionconstants._tag_datareference;'|||||return encryptionconstants._tag_keyreference; 
+return perm;'|||||return 
+return m_functiontable;'|||||return defaulttext; 
+throw wrapper.giopversionerror();'||||| 
+super.installlisteners(); tabpane.addpropertychangelistener(this);'|||||super.installlisteners(); popupmenu.addpropertychangelistener(this); 
+return fpublicid;'|||||return fpublicid; 
+entityresolver = resolver;'|||||entityresolver = resolver; 
+couldthrowsaxexception();'||||| 
+return m_attributenode.getprefix();'|||||return m_attributenode.getprevioussibling(); 
+return roundingmode;'|||||throw new unsupportedoperationexception(); 
+return new point2d.float(ctrlx, ctrly);'|||||return new point2d.double(ctrlx, ctrly); 
+return userdata;'|||||return ferrorhandler; 
+return fschemaloader.cansetparameter(name, value);'|||||return null; 
+this.constructionelement.appendchild(keyname.getelement()); xmlutils.addreturntoelement(this.constructionelement);'|||||this.add(new keyvalue(this.doc, rsakeyvalue)); 
+uninstalllisteners((jseparator) c); uninstalldefaults((jseparator) c);'|||||super.uninstallui(c); uninstalllisteners(c); uninstalldefaults(c); 
+dtdhandler = handler;'|||||fdtdhandler = dtdhandler; 
+return this.primeq;'|||||return this.primeq; 
+'|||||return null; 
+return xmlsignature.algo_id_signature_not_recommended_rsa_md5;'|||||return xmlsignature.algo_id_signature_rsa_ripemd160; 
+this.start = angst;'|||||this.start = (float) angst; 
+return seed += gamma;'|||||return (double) 
+return true;'|||||return false; 
+a.addattribute(rightindent, new float(i));'|||||m_firstfree = 0; 
+return yearmonthtodayofyear(prolepticyear, 12);'|||||return handler.openconnection(this); 
+fxml11nsdocscanner.reset(this); fxml11dtdscanner.reset(this);'||||| 
+return criticality;'|||||return paintborder; 
+return height;'|||||return (double) height; 
+v.visitexceptionthrower(this); v.visitstackconsumer(this); v.visitmonitorexit(this);'|||||v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_icmpgt(this); 
+return doc;'|||||
+bout.flush();'|||||
+this.operation = operation;'|||||
+action_obj = new cup$xpathparser$actions(this);'|||||
+return null;'|||||
+return new validationmanager();'|||||
+return getcontext(c, synthlookandfeel.getcomponentstate(c));'|||||
+'|||||
+'|||||
+super.uninstalllisteners(); menuitem.removepropertychangelistener(this);'|||||
+return evt;'|||||
+error(xmlerrorresources.er_function_not_supported); return null;'|||||
+updatestyle(progressbar);'|||||
+'|||||
+return getglobalgroupdecl(name);'|||||
+return m_next;'|||||
+return fchild;'|||||
+return _canonicalname.substring(0, _domain_length);'|||||
+return constants._tag_dsakeyvalue;'|||||
+return this.signaturealgorithm.getalgorithm();'|||||
+return (attributeset) table.get(styleconstants.resolveattribute);'|||||
+return getglobalelementdecl(name);'|||||
+return getbounds2d().getbounds();'|||||
+return null;'|||||
+return input;'|||||
+return parameter;'|||||
+return pushlevel;'|||||
+return codesetconversion.impl().getbtcconverter(osfcodesetregistry.iso_8859_1, impl.islittleendian());'|||||
+return metaltheme.white;'|||||
+return elem.getattribute(name);'|||||
+'|||||
+return this.primep;'|||||
+((directmethodhandle) mh).ensureinitialized();'|||||
+return screennullresult(peekfirst());'|||||
+return fnodeindex;'|||||
+error(xmlerrorresources.er_function_not_supported); return null;'|||||
+amethodiscalled();'|||||
+return this;'|||||
+super.paint(g, context.getcomponent());'|||||
+return new if_acmpeq(target);'|||||
+return timestamp;'|||||
+return sum();'|||||
+return this.primeq;'|||||
+checkinitialized(); super.foreach(action);'|||||
+'|||||
+return start;'|||||
+return new internaliterator(this.certificate);'|||||
+eventqueue.invokelater(dorun);'|||||
+listenerlist.add(listselectionlistener.class, l);'|||||
+super.installlisteners(); scrollbar.addpropertychangelistener(this);'|||||
+entityresolver = resolver;'|||||
+return request.getoperationname();'|||||
+return implementation;'|||||
+_preserveemptyattributes = preserve;'|||||
+return 0;'|||||
+return mbsinterceptor.getclassloaderfor(cloneobjectname(mbeanname));'|||||
+super.paint(g);'|||||
+this.endpos[index] = v;'|||||
+return this.factualvalue;'|||||
+fdepth = 0;'|||||
+return type.float;'|||||
+getrootpane().setcontentpane(contentpane);'|||||
+fdocumenturi = documenturi;'|||||
+this.bytes = bytes;'|||||
+return (simpledateformat) ((dateformatter) (gettextfield().getformatter())).getformat();'|||||
+paint(g);'|||||
+'|||||
+super.paint(g, getcomponent());'|||||
+return new intarrayspliterator(objects.requirenonnull(array), additionalcharacteristics);'|||||
+updatestyle(c);'|||||
+return getcontext(c, synthlookandfeel.getcomponentstate(c));'|||||
+return m.firstkey();'|||||
+return super.codepointbefore(index);'|||||
+return xpathfilterchgpcontainer._tag_xpathchgp;'|||||
+return false;'|||||
+error(xmlerrorresources.er_function_not_supported); return null;'|||||
+return (thaibuddhistdate) super.resolvedate(fieldvalues, resolverstyle);'|||||
+'|||||
+error(xmlerrorresources.er_function_not_supported); return null;'|||||
+return offset;'|||||
+return compileoperation(new lt(), oppos);'|||||
+return bottom;'|||||
+return equals(that);'|||||
+return "radiobutton.";'|||||
+return keysize;'|||||
+_iswarningerror = flag;'|||||
+return typechars.charat(i);'|||||
+return height;'|||||
+return digestalgorithm;'|||||
+return new if_icmpgt(target);'|||||
+v.visittypedinstruction(this); v.visitstackproducer(this); v.visitstackconsumer(this); v.visitdcmpl(this);'|||||
+return negativeprefix;'|||||
+return y1;'|||||
+return maxmonthlength;'|||||
+return implementedtransformuri;'|||||
+return getcontext(c, synthlookandfeel.getcomponentstate(c));'|||||
+return currentclassdesc.getfieldsnocopy();'|||||
+return getattributenode(localname);'|||||
+in.close(); monitor.close();'|||||
+encryptioninformation.remove(info);'|||||
+documentfilter = filter;'|||||
+super.installlisteners(); optionpane.addpropertychangelistener(this);'|||||
+return this.factualvaluetype;'|||||
+'|||||
+return fstreamreader.iswhitespace();'|||||
+return y;'|||||
+return impl.read_boolean();'|||||
+return null;'|||||
+defaultformat = atf;'|||||
+return lastindexof(str, count);'|||||
+m_os.write(c);'|||||
+return holder.getaddress();'|||||
+parser.setlocale(locale);'|||||
+return split(str, " ");'|||||
+return width;'|||||
+return enumrowstatus.getrsinttable();'|||||
+return map.containsvalue(value);'|||||
+return 0;'|||||
+return xsconstants.multivalue_facet;'|||||
+listenerlist.remove(changelistener.class, l);'|||||
+a.addattribute(italic, boolean.valueof(b));'|||||
+this.fields = fields;'|||||
+write(string.valueof(obj));'|||||
+return m_arg1;'|||||
+return referencelist;'|||||
+return getprimary2();'|||||
+'|||||
+return xmlutils.elementisinsignature11space(element, constants._tag_keyinforeference);'|||||
+return fnodeindex;'|||||
+this.inner_access_flags = inner_access_flags;'|||||
+return legacygetserverport(type, false);'|||||
+return new scrollbar(jscrollbar.vertical);'|||||
+settext(label);'|||||
+return (properties) _properties.clone();'|||||
+return dtm_iter;'|||||
+return getcontext(c, synthlookandfeel.getcomponentstate(c));'|||||
+return _node - other._node;'|||||
+'|||||
+return y;'|||||
+super.fixupvariables(vars, globalssize);'|||||
+objects.requirenonnull(annotationclass); return annotationsupport.getdirectlyandindirectlypresent(declaredannotations(), annotationclass);'|||||
+handles.clear(); vlist.clear();'|||||
+return fstreamreader.getprefix();'|||||
+exception_vec.clear();'|||||
+'|||||
+return null;'|||||
+return new xnumber(getarg0asstring(xctxt).length());'|||||
+runto(i);'|||||
+impl.write(b);'|||||
+return null;'|||||
+'|||||
+return this;'|||||
+throw new nosuchmethoderror();'|||||
+return encryptionconstants._tag_keyreference;'|||||
+v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitifnull(this);'|||||
+return null;'|||||
+'|||||
+return;'|||||
+error(xmlerrorresources.er_function_not_supported); return null;'|||||
+return new illegalargumentexception(message);'|||||
+super.accept(v); v.visitistore(this);'|||||
+updatestyle(c);'|||||
+nonrepeaters = i;'|||||
+return getglobaltypedecl(name);'|||||
+error(xmlerrorresources.er_function_not_supported); return false;'|||||
+return getpolicyvalue(request_processing_policy_id.value) == requestprocessingpolicyvalue._use_active_object_map_only;'|||||
+return name;'|||||
+m_os.flush();'|||||
+haderror = false;'|||||
+this.methods = methods;'|||||
+return new lifespanpolicyimpl(value);'|||||
+return map.values();'|||||
+return getpolicyvalue(id_assignment_policy_id.value) == idassignmentpolicyvalue._user_id;'|||||
+throw new org.omg.corba.no_implement();'|||||
+return _action_table;'|||||
+bbwi.needed = n; buffermanagerwrite.overflow(bbwi);'|||||
+return false;'|||||
+return this;'|||||
+return x;'|||||
+m_index = -1;'|||||
+return contains(p.getx(), p.gety());'|||||
+super.installlisteners(); tabpane.addpropertychangelistener(this);'|||||
+return attr;'|||||
+return new keyreference(uri);'|||||
+super.paint(g, getcomponent());'|||||
+v.visitret(this);'|||||
+'|||||
+fentitymanager.setentityhandler(this); fentitymanager.startdocumententity(inputsource); setscannerstate(xmlevent.start_document);'|||||
+return type;'|||||
+return null;'|||||
+return getcontext(c, getcomponentstate(c));'|||||
+_handler.startelement(uri, localname, qname, attributes);'|||||
+super.printstacktrace(printwriter);'|||||
+return simpleattributeset.empty;'|||||
+return cipherreference;'|||||
+listenerlist.remove(rowsorterlistener.class, l);'|||||
+return new xssimpletypedecl();'|||||
+fdocumenthandler = documenthandler;'|||||
+super.setdocumentlocator(arg0); m_saxhandler.setdocumentlocator(arg0);'|||||
+return engineid;'|||||
+return fscope;'|||||
+return getanonymouslogger(null);'|||||
+v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitifnonnull(this);'|||||
+return super.hashcode();'|||||
+this.constructionelement.appendchild(element); xmlutils.addreturntoelement(this.constructionelement);'|||||
+fcurrentcontext = fscope[fcurrentscope--]; popcontext();'|||||
+super.unconfigureeditor(); editor.removemouselistener(rolloverlistener);'|||||
+return fnodefilter;'|||||
+fdtdcontentmodelhandler = dtdcontentmodelhandler;'|||||
+return getcontext(c, getcomponentstate(c));'|||||
+throw new org.omg.corba.no_implement(reason);'|||||
+v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_icmple(this);'|||||
+return (snmpvalue) clone();'|||||
+return true;'|||||
+return scopes;'|||||
+return (double) y1;'|||||
+return false;'|||||
+displayformat = atf;'|||||
+a.addattribute(bold, boolean.valueof(b));'|||||
+this.start = (float) angst;'|||||
+return fnamespaceslist;'|||||
+return internalremovenameditem(name, true);'|||||
+_mediatype = mediatype;'|||||
+return paramgenspi.enginegenerateparameters();'|||||
+return type.float;'|||||
+return species_data;'|||||
+couldthrowsaxexception(); return false;'|||||
+super.uninstalllisteners(c); c.removepropertychangelistener(scrollbarswaplistener);'|||||
+return prompt;'|||||
+this.constructionelement.appendchild(xmlx509issuerserial.getelement()); xmlutils.addreturntoelement(this.constructionelement);'|||||
+header.repaint(header.getheaderrect(oldcolumn)); header.repaint(header.getheaderrect(newcolumn));'|||||
+super.accept(v); v.visitfstore(this);'|||||
+return datetime.getsecond();'|||||
+return selectedobject;'|||||
+return new if_icmplt(target);'|||||
+dividerkeyboardresize = true; splitpane.repaint();'|||||
+m_handler.addattributes(atts);'|||||
+return new intarraynode(array);'|||||
+return fdocumentsource;'|||||
+return dtm.getlocalname(node);'|||||
+checkaccess(mid_operation_context); throw stdwrapper.pioperationnotsupported4();'|||||
+return new serializationproxy(this);'|||||
+'|||||
+return (double) x;'|||||
+setscannerstate(scanner_state_trailing_misc); setdriver(ftrailingmiscdriver); return true;'|||||
+couldthrowsaxexception();'|||||
+policymappinginhibited = val;'|||||
+return (double) y1;'|||||
+return i_position;'|||||
+return fgrammardescription.makeclone();'|||||
+return fstreamreader.getversion();'|||||
+'|||||
+return getcontext(c, getcomponentstate(c));'|||||
+this.add(new singlecertificateresolver(x509certificate));'|||||
+return maxrepetitions;'|||||
+return bytes;'|||||
+return m.lastkey();'|||||
+return integer.max_value;'|||||
+return m_dtmmanager;'|||||
+'|||||
+'|||||
+return false;'|||||
+super.write(ostream);'|||||
+return reutil.createoptionstring(this.options);'|||||
+exp.exprsetparent(function3args.this); m_arg2 = exp;'|||||
+'|||||
+v.visitexceptionthrower(this); v.visitstackconsumer(this); v.visitmonitorexit(this);'|||||
+return false;'|||||
+return _systemid;'|||||
+return fdocumentsource;'|||||
+return s.iscyclic(l);'|||||
+setindex(bytes.readunsignedshort()); length = 3;'|||||
+return null;'|||||
+this.constructionelement.appendchild(keyvalue.getelement()); xmlutils.addreturntoelement(this.constructionelement);'|||||
+return getzonestringsimpl(true);'|||||
+this.sourceuri = sourceuri;'|||||
+return (methodhandle) unsafe.getobjectvolatile(this, target_offset);'|||||
+return nano;'|||||
+'|||||
+return getcontext(c, synthlookandfeel.getcomponentstate(c));'|||||
+return uri;'|||||
+fdtdhandler = handler;'|||||
+return mbean.invoke(actionname, params, signature);'|||||
+this.errorwriter = writer;'|||||
+return top;'|||||
+'|||||
+super.accept(v); v.visitaload(this);'|||||
+return temporal.issupported(this);'|||||
+a.addattribute(subscript, boolean.valueof(b));'|||||
+'|||||
+return class_name;'|||||
+return flocator.getcolumnnumber();'|||||
+return parent;'|||||
+chooser.removepropertychangelistener(this); super.uninstalllisteners();'|||||
+return null;'|||||
+return (stylededitorkit) geteditorkit();'|||||
+throw new unsupportedoperationexception();'|||||
+'|||||
+'|||||
+return year;'|||||
+return m_idattributes;'|||||
+return dtm.getnodevalue(node);'|||||
+return this.hashval;'|||||
+return new ns11contentdriver();'|||||
+return logwriter;'|||||
+return null;'|||||
+return this;'|||||
+this.parent = map;'|||||
+v.visitbreakpoint(this);'|||||
+checkshutdownstate(); throw wrapper.genericnoimpl();'|||||
+'|||||
+return false;'|||||
+return super.codepointat(index);'|||||
+return xmlsignature.algo_id_signature_not_recommended_rsa_md5;'|||||
+return width;'|||||
+return _contents;'|||||
+throw new org.omg.corba.no_implement(reason);'|||||
+return xpathnamespace.xpath_namespace_node;'|||||
+couldthrowsaxexception();'|||||
+return maxindex;'|||||
+return _tohfactory;'|||||
+return fbytestream;'|||||
+return false;'|||||
+write(string.valueof(i));'|||||
+super.insert(offset, f); return this;'|||||
+this.bytes = bytes;'|||||
+leave(inetaddr, null);'|||||
+super.replace(offset, length, views); invalidategrid();'|||||
+return getpolicyvalue(thread_policy_id.value) == threadpolicyvalue._orb_ctrl_model;'|||||
+return new dimension(short.max_value, short.max_value);'|||||
+return floatable;'|||||
+return "#document-fragment";'|||||
+return new point2d.double(ctrlx, ctrly);'|||||
+'|||||
+this.mimetype = mimetype;'|||||
+allwhitespace = true;'|||||
+return _contents;'|||||
+super.uninstalllisteners(); progressbar.removepropertychangelistener(this);'|||||
+addedit(e.getedit());'|||||
+return m_attributenode.getnextsibling();'|||||
+return new basicsplitpanedivider(this);'|||||
+return impl.getsize();'|||||
+couldthrowioexception(); return null;'|||||
+return offset;'|||||
+'|||||
+return type.getxmlgregoriancalendar(this);'|||||
+'|||||
+line_number_vec.clear();'|||||
+checkaccess(mid_contexts); throw stdwrapper.pioperationnotsupported3();'|||||
+jcomponent.getgraphicsinvoked(this); return super.getgraphics();'|||||
+return x1;'|||||
+return getcontext(c, synthlookandfeel.getcomponentstate(c));'|||||
+return (double) x;'|||||
+return new service(null, servicename);'|||||
+this.constructionelement.appendchild(xmlx509subjectname.getelement()); xmlutils.addreturntoelement(this.constructionelement);'|||||
+return new metalsplitpanedivider(this);'|||||
+'|||||
+realeditor.addcelleditorlistener(l);'|||||
+return null;'|||||
+this.direction = direction;'|||||
+this.qatts = qatts;'|||||
+return x2;'|||||
+flength = 0;'|||||
+return _stylesheet;'|||||
+return getcontext(c, getcomponentstate(c));'|||||
+super.insert(offset, f); return this;'|||||
+return version;'|||||
+'|||||
+cleandisplayproperties(); super.uninstallui(c);'|||||
+return true;'|||||
+--lastused;'|||||
+maybeinitialize(); return getlafstate().multiuidefaults;'|||||
+return fnodeindex;'|||||
+doclick(68);'|||||
+'|||||
+finputstream.reset();'|||||
+return objectname;'|||||
+super.installdefaults(); updatestyle(chooser);'|||||
+'|||||
+impl.write_value(value);'|||||
+return keyinfo;'|||||
+return new point2d.float(x1, y1);'|||||
+return getcontext(c, getcomponentstate(c));'|||||
+return getdocumentroot(context);'|||||
+'|||||
+return _templates;'|||||
+return kind;'|||||
+return maxrepetitions;'|||||
+return (snmpvalue) clone();'|||||
+error(xmlerrorresources.er_function_not_supported);'|||||
+m_elemcontext.m_starttagopen = false;'|||||
+policyqualifiersrejected = qualifiersrejected;'|||||
+return implementedtransformuri;'|||||
+return "#namespace";'|||||
+_flag = true;'|||||
+return fgrammardescription.makeclone();'|||||
+return new point2d.float(ctrlx, ctrly);'|||||
+slider.removepropertychangelistener(this); super.uninstalllisteners(slider);'|||||
+'|||||
+'|||||
+return menus.indexof(child);'|||||
+a.addattribute(leftindent, new float(i));'|||||
+amethodiscalled(); return null;'|||||
+this.class_name_index = class_name_index;'|||||
+return xmlsignature.algo_id_mac_hmac_sha256;'|||||
+return getpolicyvalue(lifespan_policy_id.value) == lifespanpolicyvalue._transient;'|||||
+return this.fitemvaluetypes;'|||||
+error(xmlerrorresources.er_function_not_supported); return null;'|||||
+throw new org.omg.corba.no_implement(reason);'|||||
+factivegrammar = grammar;'|||||
+this.constructionelement.appendchild(pgpdata.getelement()); xmlutils.addreturntoelement(this.constructionelement);'|||||
+return new keystoreiterator(this.keystore);'|||||
+return !messagemediator.isoneway();'|||||
+'|||||
+return new basicbuttonlistener(b);'|||||
+'|||||
+return namespace;'|||||
+this.start = angst;'|||||
+return ((directmethodhandle) mh).member;'|||||
+couldthrowsaxexception();'|||||
+return arrays.copyof(shortmonths, shortmonths.length);'|||||
+return new string[0];'|||||
+return setnameditem(arg);'|||||
+return constant_pool;'|||||
+return getmodelwrapper().getrowcount();'|||||
+return state;'|||||
+'|||||
+this.parent = parent;'|||||
+return get(getarray(), index);'|||||
+return (this.i < this.certs.size());'|||||
+return buflen;'|||||
+return onetouchexpandable;'|||||
+return m_patterns[m_index];'|||||
+this.catalog = catalog;'|||||
+'|||||
+super.removenotify(); eventcontroller.updateawteventlistener(eventmask, 0);'|||||
+return isserver;'|||||
+a.addattribute(bidilevel, integer.valueof(o));'|||||
+entityresolver = resolver;'|||||
+calculatethumbsize(); layout(); calculatethumblocation();'|||||
+return integer.max_value;'|||||
+return (component) getclientproperty(next_focus);'|||||
+return excludecomments;'|||||
+return hasattribute(localname);'|||||
+a.addattribute(linespacing, new float(i));'|||||
+return this.modulus;'|||||
+setselectedindex(-1);'|||||
+error(xmlerrorresources.er_function_not_supported);'|||||
+ferrorreporter.setproperty(error_handler, errorhandler);'|||||
+return nonrepeaters;'|||||
+setui((scrollbarui) uimanager.getui(this));'|||||
+return;'|||||
+bridge();'|||||
+'|||||
+return name;'|||||
+'|||||
+return referencenode;'|||||
+return false;'|||||
+super.removenotify(); keyboardmanager.getcurrentmanager().unregistermenubar(this);'|||||
+return getinstance(inlocale, scientificstyle);'|||||
+a.addattribute(tabset, tabs);'|||||
+throw new org.omg.corba.no_implement(reason);'|||||
+sync.acquireshared(1);'|||||
+return fschemaloader.getparameter(name);'|||||
+return filemanager.inferbinaryname(location, file);'|||||
+this.mgfalgorithm = mgfalgorithm;'|||||
+return time.getminute();'|||||
+return _contents;'|||||
+throw new org.omg.corba.no_implement(reason);'|||||
+navigationfilter = filter;'|||||
+'|||||
+'|||||
+return false;'|||||
+return fgrammardescription;'|||||
+return type.unknown;'|||||
+return ftype;'|||||
+return type;'|||||
+return m_attributenode.issupported(arg0, arg1);'|||||
+fattributes[attrindex].schemaid = schemaid;'|||||
+enterpriseoid = new snmpoid(oid);'|||||
+return bin.readboolean();'|||||
+return null;'|||||
+return id;'|||||
+return encoded.clone();'|||||
+'|||||
+return capacity;'|||||
+return value;'|||||
+attribs.add(x);'|||||
+return (parallelgroup) super.addgap(pref);'|||||
+getrootpane().setglasspane(glasspane);'|||||
+return fdocumenthandler;'|||||
+return null;'|||||
+checkcolumn(column); rowsupdated(firstrow, endrow);'|||||
+_handler.processinginstruction(target, data);'|||||
+'|||||
+return perm;'|||||
+m_disableoutputescapingstates.pop();'|||||
+out.write(c);'|||||
+return this.crtcoefficient;'|||||
+super.paint(g, getcomponent());'|||||
+return problemtype;'|||||
+return new filtercomboboxmodel();'|||||
+updatecelleditor();'|||||
+return mencoded.clone();'|||||
+'|||||
+return crtime;'|||||
+return revocationenabled;'|||||
+getrootpane().setlayeredpane(layeredpane);'|||||
+couldthrowsaxexception();'|||||
+return parameter;'|||||
+return prompt;'|||||
+return hascache();'|||||
+return _contents;'|||||
+return 0;'|||||
+return null;'|||||
+return navigationfilter;'|||||
+'|||||
+return sharedgetparameterannotations(parametertypes, parameterannotations);'|||||
+return clonewithvalue();'|||||
+return this.primeexponentq;'|||||
+return superclass_name_index;'|||||
+return serialnumber;'|||||
+return getcontext(c, getcomponentstate(c));'|||||
+dtdhandler = handler;'|||||
+this.column = col;'|||||
+this.opcode = opcode;'|||||
+return m_isinvaliditeratorstate;'|||||
+return context;'|||||
+return null;'|||||
+return serviceprovider;'|||||
+return true;'|||||
+error(xmlerrorresources.er_function_not_supported); return false;'|||||
+return getcontext(c, synthlookandfeel.getcomponentstate(c));'|||||
+return form.editor();'|||||
+return nodetype;'|||||
+writebytes(b, 0, b.length);'|||||
+flush(); clear(); bout.close();'|||||
+return implementedtransformuri;'|||||
+_debug = debug;'|||||
+return year;'|||||
+v.visitstackproducer(this); v.visitbranchinstruction(this); v.visitjsrinstruction(this); v.visitjsr_w(this);'|||||
+return buffer != null;'|||||
+throw new domexception(domexception.not_supported_err, null);'|||||
+a.addattribute(foreground, fg);'|||||
+v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_acmpne(this);'|||||
+return new motifpropertychangelistener();'|||||
+return true;'|||||
+return fchild;'|||||
+'|||||
+return fnamespaceitem;'|||||
+return max_stream_format_version;'|||||
+this.fstreamfilter = sf;'|||||
+return (double) y2;'|||||
+return width;'|||||
+getrootpane().setlayeredpane(layeredpane);'|||||
+return new idassignmentpolicyimpl(value);'|||||
+return temporal.issupported(epoch_day);'|||||
+this.constructionelement.appendchild(sp.getelement()); xmlutils.addreturntoelement(this.constructionelement);'|||||
+return new point2d.double(ctrlx2, ctrly2);'|||||
+names.removeallelements(); types.removeallelements(); values.removeallelements();'|||||
+super.installlisteners(slider); slider.addpropertychangelistener(this);'|||||
+write(str, 0, str.length());'|||||
+visitor.visitstringliteral(owner, this);'|||||
+return transferhandler;'|||||
+super.installdefaults(); updatestyle(getcomponent()); getcomponent().addfocuslistener(handler);'|||||
+return sum(s1, minus(s2));'|||||
+encryptionproperties.add(property);'|||||
+return node.getnamespaceuri();'|||||
+revocationenabled = val;'|||||
+'|||||
+return m_expr;'|||||
+return maxcrl;'|||||
+return encoding;'|||||
+m_next = 0;'|||||
+exp.exprsetparent(functionmultiargs.this); m_args[m_argindex] = exp;'|||||
+return null;'|||||
+'|||||
+v.visittypedinstruction(this); v.visitstackproducer(this); v.visitstackconsumer(this); v.visitlcmp(this);'|||||
+return fnodeindex;'|||||
+v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_icmpeq(this);'|||||
+log(level.info, msg);'|||||
+return;'|||||
+paint(g);'|||||
+return y1;'|||||
+return time.gethour();'|||||
+return left;'|||||
+cbsender = cb;'|||||
+return null;'|||||
+return _exception;'|||||
+slider.repaint();'|||||
+return super.offsetbycodepoints(index, codepointoffset);'|||||
+return id;'|||||
+_handler.startprefixmapping(prefix, uri);'|||||
+return xmlsignature.algo_id_signature_ecdsa_sha1;'|||||
+return new point2d.float(x1, y1);'|||||
+return (xstring) getarg0asstring(xctxt);'|||||
+'|||||
+return this;'|||||
+return new xmlentitymanager();'|||||
+super.paint(g, splitpane);'|||||
+return xpath2filtercontainer04.xpathfilter2ns;'|||||
+return get(dst, 0, dst.length);'|||||
+exp.exprsetparent(funcextfunction.this); m_exp = exp;'|||||
+v.visittypedinstruction(this); v.visitstackproducer(this); v.visitstackconsumer(this); v.visitfcmpg(this);'|||||
+eventqueue.invokeandwait(dorun);'|||||
+this.signature_index = signature_index;'|||||
+this.constant_pool = constant_pool;'|||||
+return super.lastindexof(str, fromindex);'|||||
+return compileoperation(new equals(), oppos);'|||||
+return references.size();'|||||
+return this.prime;'|||||
+args.set(argnum, newspec);'|||||
+return doc;'|||||
+bout.flush();'|||||
+this.operation = operation;'|||||
+action_obj = new cup$xpathparser$actions(this);'|||||
+return null;'|||||
+return new validationmanager();'|||||
+return getcontext(c, synthlookandfeel.getcomponentstate(c));'|||||
+'|||||
+'|||||
+super.uninstalllisteners(); menuitem.removepropertychangelistener(this);'|||||
+return evt;'|||||
+error(xmlerrorresources.er_function_not_supported); return null;'|||||
+updatestyle(progressbar);'|||||
+'|||||
+return getglobalgroupdecl(name);'|||||
+return m_next;'|||||
+return fchild;'|||||
+return _canonicalname.substring(0, _domain_length);'|||||
+return constants._tag_dsakeyvalue;'|||||
+return this.signaturealgorithm.getalgorithm();'|||||
+return (attributeset) table.get(styleconstants.resolveattribute);'|||||
+return getglobalelementdecl(name);'|||||
+return getbounds2d().getbounds();'|||||
+return null;'|||||
+return input;'|||||
+return parameter;'|||||
+return pushlevel;'|||||
+return codesetconversion.impl().getbtcconverter(osfcodesetregistry.iso_8859_1, impl.islittleendian());'|||||
+return metaltheme.white;'|||||
+return elem.getattribute(name);'|||||
+'|||||
+return this.primep;'|||||
+((directmethodhandle) mh).ensureinitialized();'|||||
+return screennullresult(peekfirst());'|||||
+return fnodeindex;'|||||
+error(xmlerrorresources.er_function_not_supported); return null;'|||||
+amethodiscalled();'|||||
+return this;'|||||
+super.paint(g, context.getcomponent());'|||||
+return new if_acmpeq(target);'|||||
+return timestamp;'|||||
+return sum();'|||||
+return this.primeq;'|||||
+checkinitialized(); super.foreach(action);'|||||
+'|||||
+return start;'|||||
+return new internaliterator(this.certificate);'|||||
+eventqueue.invokelater(dorun);'|||||
+listenerlist.add(listselectionlistener.class, l);'|||||
+super.installlisteners(); scrollbar.addpropertychangelistener(this);'|||||
+entityresolver = resolver;'|||||
+return request.getoperationname();'|||||
+return implementation;'|||||
+_preserveemptyattributes = preserve;'|||||
+return 0;'|||||
+return mbsinterceptor.getclassloaderfor(cloneobjectname(mbeanname));'|||||
+super.paint(g);'|||||
+this.endpos[index] = v;'|||||
+return this.factualvalue;'|||||
+fdepth = 0;'|||||
+return type.float;'|||||
+getrootpane().setcontentpane(contentpane);'|||||
+fdocumenturi = documenturi;'|||||
+this.bytes = bytes;'|||||
+return (simpledateformat) ((dateformatter) (gettextfield().getformatter())).getformat();'|||||
+paint(g);'|||||
+'|||||
+super.paint(g, getcomponent());'|||||
+return new intarrayspliterator(objects.requirenonnull(array), additionalcharacteristics);'|||||
+updatestyle(c);'|||||
+return getcontext(c, synthlookandfeel.getcomponentstate(c));'|||||
+return m.firstkey();'|||||
+return super.codepointbefore(index);'|||||
+return xpathfilterchgpcontainer._tag_xpathchgp;'|||||
+return false;'|||||
+error(xmlerrorresources.er_function_not_supported); return null;'|||||
+return (thaibuddhistdate) super.resolvedate(fieldvalues, resolverstyle);'|||||
+'|||||
+error(xmlerrorresources.er_function_not_supported); return null;'|||||
+return offset;'|||||
+return compileoperation(new lt(), oppos);'|||||
+return bottom;'|||||
+return equals(that);'|||||
+return "radiobutton.";'|||||
+return keysize;'|||||
+_iswarningerror = flag;'|||||
+return typechars.charat(i);'|||||
+return height;'|||||
+return digestalgorithm;'|||||
+return new if_icmpgt(target);'|||||
+v.visittypedinstruction(this); v.visitstackproducer(this); v.visitstackconsumer(this); v.visitdcmpl(this);'|||||
+return negativeprefix;'|||||
+return y1;'|||||
+return maxmonthlength;'|||||
+return implementedtransformuri;'|||||
+return getcontext(c, synthlookandfeel.getcomponentstate(c));'|||||
+return currentclassdesc.getfieldsnocopy();'|||||
+return getattributenode(localname);'|||||
+in.close(); monitor.close();'|||||
+encryptioninformation.remove(info);'|||||
+documentfilter = filter;'|||||
+super.installlisteners(); optionpane.addpropertychangelistener(this);'|||||
+return this.factualvaluetype;'|||||
+'|||||
+return fstreamreader.iswhitespace();'|||||
+return y;'|||||
+return impl.read_boolean();'|||||
+return null;'|||||
+defaultformat = atf;'|||||
+return lastindexof(str, count);'|||||
+m_os.write(c);'|||||
+return holder.getaddress();'|||||
+parser.setlocale(locale);'|||||
+return split(str, " ");'|||||
+return width;'|||||
+return enumrowstatus.getrsinttable();'|||||
+return map.containsvalue(value);'|||||
+return 0;'|||||
+return xsconstants.multivalue_facet;'|||||
+listenerlist.remove(changelistener.class, l);'|||||
+a.addattribute(italic, boolean.valueof(b));'|||||
+this.fields = fields;'|||||
+write(string.valueof(obj));'|||||
+return m_arg1;'|||||
+return referencelist;'|||||
+return getprimary2();'|||||
+'|||||
+return xmlutils.elementisinsignature11space(element, constants._tag_keyinforeference);'|||||
+return fnodeindex;'|||||
+this.inner_access_flags = inner_access_flags;'|||||
+return legacygetserverport(type, false);'|||||
+return new scrollbar(jscrollbar.vertical);'|||||
+settext(label);'|||||
+return (properties) _properties.clone();'|||||
+return dtm_iter;'|||||
+return getcontext(c, synthlookandfeel.getcomponentstate(c));'|||||
+return _node - other._node;'|||||
+'|||||
+return y;'|||||
+super.fixupvariables(vars, globalssize);'|||||
+objects.requirenonnull(annotationclass); return annotationsupport.getdirectlyandindirectlypresent(declaredannotations(), annotationclass);'|||||
+handles.clear(); vlist.clear();'|||||
+return fstreamreader.getprefix();'|||||
+exception_vec.clear();'|||||
+'|||||
+return null;'|||||
+return new xnumber(getarg0asstring(xctxt).length());'|||||
+runto(i);'|||||
+impl.write(b);'|||||
+return null;'|||||
+'|||||
+return this;'|||||
+throw new nosuchmethoderror();'|||||
+return encryptionconstants._tag_keyreference;'|||||
+v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitifnull(this);'|||||
+return null;'|||||
+'|||||
+return;'|||||
+error(xmlerrorresources.er_function_not_supported); return null;'|||||
+return new illegalargumentexception(message);'|||||
+super.accept(v); v.visitistore(this);'|||||
+updatestyle(c);'|||||
+nonrepeaters = i;'|||||
+return getglobaltypedecl(name);'|||||
+error(xmlerrorresources.er_function_not_supported); return false;'|||||
+return getpolicyvalue(request_processing_policy_id.value) == requestprocessingpolicyvalue._use_active_object_map_only;'|||||
+return name;'|||||
+m_os.flush();'|||||
+haderror = false;'|||||
+this.methods = methods;'|||||
+return new lifespanpolicyimpl(value);'|||||
+return map.values();'|||||
+return getpolicyvalue(id_assignment_policy_id.value) == idassignmentpolicyvalue._user_id;'|||||
+throw new org.omg.corba.no_implement();'|||||
+return _action_table;'|||||
+bbwi.needed = n; buffermanagerwrite.overflow(bbwi);'|||||
+return false;'|||||
+return this;'|||||
+return x;'|||||
+m_index = -1;'|||||
+return contains(p.getx(), p.gety());'|||||
+super.installlisteners(); tabpane.addpropertychangelistener(this);'|||||
+return attr;'|||||
+return new keyreference(uri);'|||||
+super.paint(g, getcomponent());'|||||
+v.visitret(this);'|||||
+'|||||
+fentitymanager.setentityhandler(this); fentitymanager.startdocumententity(inputsource); setscannerstate(xmlevent.start_document);'|||||
+return type;'|||||
+return null;'|||||
+return getcontext(c, getcomponentstate(c));'|||||
+_handler.startelement(uri, localname, qname, attributes);'|||||
+super.printstacktrace(printwriter);'|||||
+return simpleattributeset.empty;'|||||
+return cipherreference;'|||||
+listenerlist.remove(rowsorterlistener.class, l);'|||||
+return new xssimpletypedecl();'|||||
+fdocumenthandler = documenthandler;'|||||
+super.setdocumentlocator(arg0); m_saxhandler.setdocumentlocator(arg0);'|||||
+return engineid;'|||||
+return fscope;'|||||
+return getanonymouslogger(null);'|||||
+v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitifnonnull(this);'|||||
+return super.hashcode();'|||||
+this.constructionelement.appendchild(element); xmlutils.addreturntoelement(this.constructionelement);'|||||
+fcurrentcontext = fscope[fcurrentscope--]; popcontext();'|||||
+super.unconfigureeditor(); editor.removemouselistener(rolloverlistener);'|||||
+return fnodefilter;'|||||
+fdtdcontentmodelhandler = dtdcontentmodelhandler;'|||||
+return getcontext(c, getcomponentstate(c));'|||||
+throw new org.omg.corba.no_implement(reason);'|||||
+v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_icmple(this);'|||||
+return (snmpvalue) clone();'|||||
+return true;'|||||
+return scopes;'|||||
+return (double) y1;'|||||
+return false;'|||||
+displayformat = atf;'|||||
+a.addattribute(bold, boolean.valueof(b));'|||||
+this.start = (float) angst;'|||||
+return fnamespaceslist;'|||||
+return internalremovenameditem(name, true);'|||||
+_mediatype = mediatype;'|||||
+return paramgenspi.enginegenerateparameters();'|||||
+return type.float;'|||||
+return species_data;'|||||
+couldthrowsaxexception(); return false;'|||||
+super.uninstalllisteners(c); c.removepropertychangelistener(scrollbarswaplistener);'|||||
+return prompt;'|||||
+this.constructionelement.appendchild(xmlx509issuerserial.getelement()); xmlutils.addreturntoelement(this.constructionelement);'|||||
+header.repaint(header.getheaderrect(oldcolumn)); header.repaint(header.getheaderrect(newcolumn));'|||||
+super.accept(v); v.visitfstore(this);'|||||
+return datetime.getsecond();'|||||
+return selectedobject;'|||||
+return new if_icmplt(target);'|||||
+dividerkeyboardresize = true; splitpane.repaint();'|||||
+m_handler.addattributes(atts);'|||||
+return new intarraynode(array);'|||||
+return fdocumentsource;'|||||
+return dtm.getlocalname(node);'|||||
+checkaccess(mid_operation_context); throw stdwrapper.pioperationnotsupported4();'|||||
+return new serializationproxy(this);'|||||
+'|||||
+return (double) x;'|||||
+setscannerstate(scanner_state_trailing_misc); setdriver(ftrailingmiscdriver); return true;'|||||
+couldthrowsaxexception();'|||||
+policymappinginhibited = val;'|||||
+return (double) y1;'|||||
+return i_position;'|||||
+return fgrammardescription.makeclone();'|||||
+return fstreamreader.getversion();'|||||
+'|||||
+return getcontext(c, getcomponentstate(c));'|||||
+this.add(new singlecertificateresolver(x509certificate));'|||||
+return maxrepetitions;'|||||
+return bytes;'|||||
+return m.lastkey();'|||||
+return integer.max_value;'|||||
+return m_dtmmanager;'|||||
+'|||||
+'|||||
+return false;'|||||
+super.write(ostream);'|||||
+return reutil.createoptionstring(this.options);'|||||
+exp.exprsetparent(function3args.this); m_arg2 = exp;'|||||
+'|||||
+v.visitexceptionthrower(this); v.visitstackconsumer(this); v.visitmonitorexit(this);'|||||
+return false;'|||||
+return _systemid;'|||||
+return fdocumentsource;'|||||
+return s.iscyclic(l);'|||||
+setindex(bytes.readunsignedshort()); length = 3;'|||||
+return null;'|||||
+this.constructionelement.appendchild(keyvalue.getelement()); xmlutils.addreturntoelement(this.constructionelement);'|||||
+return getzonestringsimpl(true);'|||||
+this.sourceuri = sourceuri;'|||||
+return (methodhandle) unsafe.getobjectvolatile(this, target_offset);'|||||
+return nano;'|||||
+'|||||
+return getcontext(c, synthlookandfeel.getcomponentstate(c));'|||||
+return uri;'|||||
+fdtdhandler = handler;'|||||
+return mbean.invoke(actionname, params, signature);'|||||
+this.errorwriter = writer;'|||||
+return top;'|||||
+'|||||
+super.accept(v); v.visitaload(this);'|||||
+return temporal.issupported(this);'|||||
+a.addattribute(subscript, boolean.valueof(b));'|||||
+'|||||
+return class_name;'|||||
+return flocator.getcolumnnumber();'|||||
+return parent;'|||||
+chooser.removepropertychangelistener(this); super.uninstalllisteners();'|||||
+return null;'|||||
+return (stylededitorkit) geteditorkit();'|||||
+throw new unsupportedoperationexception();'|||||
+'|||||
+'|||||
+return year;'|||||
+return m_idattributes;'|||||
+return dtm.getnodevalue(node);'|||||
+return this.hashval;'|||||
+return new ns11contentdriver();'|||||
+return logwriter;'|||||
+return null;'|||||
+return this;'|||||
+this.parent = map;'|||||
+v.visitbreakpoint(this);'|||||
+checkshutdownstate(); throw wrapper.genericnoimpl();'|||||
+'|||||
+return false;'|||||
+return super.codepointat(index);'|||||
+return xmlsignature.algo_id_signature_not_recommended_rsa_md5;'|||||
+return width;'|||||
+return _contents;'|||||
+throw new org.omg.corba.no_implement(reason);'|||||
+return xpathnamespace.xpath_namespace_node;'|||||
+couldthrowsaxexception();'|||||
+return maxindex;'|||||
+return _tohfactory;'|||||
+return fbytestream;'|||||
+return false;'|||||
+write(string.valueof(i));'|||||
+super.insert(offset, f); return this;'|||||
+this.bytes = bytes;'|||||
+leave(inetaddr, null);'|||||
+super.replace(offset, length, views); invalidategrid();'|||||
+return getpolicyvalue(thread_policy_id.value) == threadpolicyvalue._orb_ctrl_model;'|||||
+return new dimension(short.max_value, short.max_value);'|||||
+return floatable;'|||||
+return "#document-fragment";'|||||
+return new point2d.double(ctrlx, ctrly);'|||||
+'|||||
+this.mimetype = mimetype;'|||||
+allwhitespace = true;'|||||
+return _contents;'|||||
+super.uninstalllisteners(); progressbar.removepropertychangelistener(this);'|||||
+addedit(e.getedit());'|||||
+return m_attributenode.getnextsibling();'|||||
+return new basicsplitpanedivider(this);'|||||
+return impl.getsize();'|||||
+couldthrowioexception(); return null;'|||||
+return offset;'|||||
+'|||||
+return type.getxmlgregoriancalendar(this);'|||||
+'|||||
+line_number_vec.clear();'|||||
+checkaccess(mid_contexts); throw stdwrapper.pioperationnotsupported3();'|||||
+jcomponent.getgraphicsinvoked(this); return super.getgraphics();'|||||
+return x1;'|||||
+return getcontext(c, synthlookandfeel.getcomponentstate(c));'|||||
+return (double) x;'|||||
+return new service(null, servicename);'|||||
+this.constructionelement.appendchild(xmlx509subjectname.getelement()); xmlutils.addreturntoelement(this.constructionelement);'|||||
+return new metalsplitpanedivider(this);'|||||
+'|||||
+realeditor.addcelleditorlistener(l);'|||||
+return null;'|||||
+this.direction = direction;'|||||
+this.qatts = qatts;'|||||
+return x2;'|||||
+flength = 0;'|||||
+return _stylesheet;'|||||
+return getcontext(c, getcomponentstate(c));'|||||
+super.insert(offset, f); return this;'|||||
+return version;'|||||
+'|||||
+cleandisplayproperties(); super.uninstallui(c);'|||||
+return true;'|||||
+--lastused;'|||||
+maybeinitialize(); return getlafstate().multiuidefaults;'|||||
+return fnodeindex;'|||||
+doclick(68);'|||||
+'|||||
+finputstream.reset();'|||||
+return objectname;'|||||
+super.installdefaults(); updatestyle(chooser);'|||||
+'|||||
+impl.write_value(value);'|||||
+return keyinfo;'|||||
+return new point2d.float(x1, y1);'|||||
+return getcontext(c, getcomponentstate(c));'|||||
+return getdocumentroot(context);'|||||
+'|||||
+return _templates;'|||||
+return kind;'|||||
+return maxrepetitions;'|||||
+return (snmpvalue) clone();'|||||
+error(xmlerrorresources.er_function_not_supported);'|||||
+m_elemcontext.m_starttagopen = false;'|||||
+policyqualifiersrejected = qualifiersrejected;'|||||
+return implementedtransformuri;'|||||
+return "#namespace";'|||||
+_flag = true;'|||||
+return fgrammardescription.makeclone();'|||||
+return new point2d.float(ctrlx, ctrly);'|||||
+slider.removepropertychangelistener(this); super.uninstalllisteners(slider);'|||||
+'|||||
+'|||||
+return menus.indexof(child);'|||||
+a.addattribute(leftindent, new float(i));'|||||
+amethodiscalled(); return null;'|||||
+this.class_name_index = class_name_index;'|||||
+return xmlsignature.algo_id_mac_hmac_sha256;'|||||
+return getpolicyvalue(lifespan_policy_id.value) == lifespanpolicyvalue._transient;'|||||
+return this.fitemvaluetypes;'|||||
+error(xmlerrorresources.er_function_not_supported); return null;'|||||
+throw new org.omg.corba.no_implement(reason);'|||||
+factivegrammar = grammar;'|||||
+this.constructionelement.appendchild(pgpdata.getelement()); xmlutils.addreturntoelement(this.constructionelement);'|||||
+return new keystoreiterator(this.keystore);'|||||
+return !messagemediator.isoneway();'|||||
+'|||||
+return new basicbuttonlistener(b);'|||||
+'|||||
+return namespace;'|||||
+this.start = angst;'|||||
+return ((directmethodhandle) mh).member;'|||||
+couldthrowsaxexception();'|||||
+return arrays.copyof(shortmonths, shortmonths.length);'|||||
+return new string[0];'|||||
+return setnameditem(arg);'|||||
+return constant_pool;'|||||
+return getmodelwrapper().getrowcount();'|||||
+return state;'|||||
+'|||||
+this.parent = parent;'|||||
+return get(getarray(), index);'|||||
+return (this.i < this.certs.size());'|||||
+return buflen;'|||||
+return onetouchexpandable;'|||||
+return m_patterns[m_index];'|||||
+this.catalog = catalog;'|||||
+'|||||
+super.removenotify(); eventcontroller.updateawteventlistener(eventmask, 0);'|||||
+return isserver;'|||||
+a.addattribute(bidilevel, integer.valueof(o));'|||||
+entityresolver = resolver;'|||||
+calculatethumbsize(); layout(); calculatethumblocation();'|||||
+return integer.max_value;'|||||
+return (component) getclientproperty(next_focus);'|||||
+return excludecomments;'|||||
+return hasattribute(localname);'|||||
+a.addattribute(linespacing, new float(i));'|||||
+return this.modulus;'|||||
+setselectedindex(-1);'|||||
+error(xmlerrorresources.er_function_not_supported);'|||||
+ferrorreporter.setproperty(error_handler, errorhandler);'|||||
+return nonrepeaters;'|||||
+setui((scrollbarui) uimanager.getui(this));'|||||
+return;'|||||
+bridge();'|||||
+'|||||
+return name;'|||||
+'|||||
+return referencenode;'|||||
+return false;'|||||
+super.removenotify(); keyboardmanager.getcurrentmanager().unregistermenubar(this);'|||||
+return getinstance(inlocale, scientificstyle);'|||||
+a.addattribute(tabset, tabs);'|||||
+throw new org.omg.corba.no_implement(reason);'|||||
+sync.acquireshared(1);'|||||
+return fschemaloader.getparameter(name);'|||||
+return filemanager.inferbinaryname(location, file);'|||||
+this.mgfalgorithm = mgfalgorithm;'|||||
+return time.getminute();'|||||
+return _contents;'|||||
+throw new org.omg.corba.no_implement(reason);'|||||
+navigationfilter = filter;'|||||
+'|||||
+'|||||
+return false;'|||||
+return fgrammardescription;'|||||
+return type.unknown;'|||||
+return ftype;'|||||
+return type;'|||||
+return m_attributenode.issupported(arg0, arg1);'|||||
+fattributes[attrindex].schemaid = schemaid;'|||||
+enterpriseoid = new snmpoid(oid);'|||||
+return bin.readboolean();'|||||
+return null;'|||||
+return id;'|||||
+return encoded.clone();'|||||
+'|||||
+return capacity;'|||||
+return value;'|||||
+attribs.add(x);'|||||
+return (parallelgroup) super.addgap(pref);'|||||
+getrootpane().setglasspane(glasspane);'|||||
+return fdocumenthandler;'|||||
+return null;'|||||
+checkcolumn(column); rowsupdated(firstrow, endrow);'|||||
+_handler.processinginstruction(target, data);'|||||
+'|||||
+return perm;'|||||
+m_disableoutputescapingstates.pop();'|||||
+out.write(c);'|||||
+return this.crtcoefficient;'|||||
+super.paint(g, getcomponent());'|||||
+return problemtype;'|||||
+return new filtercomboboxmodel();'|||||
+updatecelleditor();'|||||
+return mencoded.clone();'|||||
+'|||||
+return crtime;'|||||
+return revocationenabled;'|||||
+getrootpane().setlayeredpane(layeredpane);'|||||
+couldthrowsaxexception();'|||||
+return parameter;'|||||
+return prompt;'|||||
+return hascache();'|||||
+return _contents;'|||||
+return 0;'|||||
+return null;'|||||
+return navigationfilter;'|||||
+'|||||
+return sharedgetparameterannotations(parametertypes, parameterannotations);'|||||
+return clonewithvalue();'|||||
+return this.primeexponentq;'|||||
+return superclass_name_index;'|||||
+return serialnumber;'|||||
+return getcontext(c, getcomponentstate(c));'|||||
+dtdhandler = handler;'|||||
+this.column = col;'|||||
+this.opcode = opcode;'|||||
+return m_isinvaliditeratorstate;'|||||
+return context;'|||||
+return null;'|||||
+return serviceprovider;'|||||
+return true;'|||||
+error(xmlerrorresources.er_function_not_supported); return false;'|||||
+return getcontext(c, synthlookandfeel.getcomponentstate(c));'|||||
+return form.editor();'|||||
+return nodetype;'|||||
+writebytes(b, 0, b.length);'|||||
+flush(); clear(); bout.close();'|||||
+return implementedtransformuri;'|||||
+_debug = debug;'|||||
+return year;'|||||
+v.visitstackproducer(this); v.visitbranchinstruction(this); v.visitjsrinstruction(this); v.visitjsr_w(this);'|||||
+return buffer != null;'|||||
+throw new domexception(domexception.not_supported_err, null);'|||||
+a.addattribute(foreground, fg);'|||||
+v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_acmpne(this);'|||||
+return new motifpropertychangelistener();'|||||
+return true;'|||||
+return fchild;'|||||
+'|||||
+return fnamespaceitem;'|||||
+return max_stream_format_version;'|||||
+this.fstreamfilter = sf;'|||||
+return (double) y2;'|||||
+return width;'|||||
+getrootpane().setlayeredpane(layeredpane);'|||||
+return new idassignmentpolicyimpl(value);'|||||
+return temporal.issupported(epoch_day);'|||||
+this.constructionelement.appendchild(sp.getelement()); xmlutils.addreturntoelement(this.constructionelement);'|||||
+return new point2d.double(ctrlx2, ctrly2);'|||||
+names.removeallelements(); types.removeallelements(); values.removeallelements();'|||||
+super.installlisteners(slider); slider.addpropertychangelistener(this);'|||||
+write(str, 0, str.length());'|||||
+visitor.visitstringliteral(owner, this);'|||||
+return transferhandler;'|||||
+super.installdefaults(); updatestyle(getcomponent()); getcomponent().addfocuslistener(handler);'|||||
+return sum(s1, minus(s2));'|||||
+encryptionproperties.add(property);'|||||
+return node.getnamespaceuri();'|||||
+revocationenabled = val;'|||||
+'|||||
+return m_expr;'|||||
+return maxcrl;'|||||
+return encoding;'|||||
+m_next = 0;'|||||
+exp.exprsetparent(functionmultiargs.this); m_args[m_argindex] = exp;'|||||
+return null;'|||||
+'|||||
+v.visittypedinstruction(this); v.visitstackproducer(this); v.visitstackconsumer(this); v.visitlcmp(this);'|||||
+return fnodeindex;'|||||
+v.visitstackconsumer(this); v.visitbranchinstruction(this); v.visitifinstruction(this); v.visitif_icmpeq(this);'|||||
+log(level.info, msg);'|||||
+return;'|||||
+paint(g);'|||||
+return y1;'|||||
+return time.gethour();'|||||
+return left;'|||||
+cbsender = cb;'|||||
+return null;'|||||
+return _exception;'|||||
+slider.repaint();'|||||
+return super.offsetbycodepoints(index, codepointoffset);'|||||
+return id;'|||||
+_handler.startprefixmapping(prefix, uri);'|||||
+return xmlsignature.algo_id_signature_ecdsa_sha1;'|||||
+return new point2d.float(x1, y1);'|||||
+return (xstring) getarg0asstring(xctxt);'|||||
+'|||||
+return this;'|||||
+return new xmlentitymanager();'|||||
+super.paint(g, splitpane);'|||||
+return xpath2filtercontainer04.xpathfilter2ns;'|||||
+return get(dst, 0, dst.length);'|||||
+exp.exprsetparent(funcextfunction.this); m_exp = exp;'|||||
+v.visittypedinstruction(this); v.visitstackproducer(this); v.visitstackconsumer(this); v.visitfcmpg(this);'|||||
+eventqueue.invokeandwait(dorun);'|||||
+this.signature_index = signature_index;'|||||
+this.constant_pool = constant_pool;'|||||
+return super.lastindexof(str, fromindex);'|||||
+return compileoperation(new equals(), oppos);'|||||
+return references.size();'|||||
+return this.prime;'|||||
+args.set(argnum, newspec);'|||||
