@@ -23,6 +23,8 @@ def bleu(path):
                 break
             reference = filterString(pair_s[0])
             candidate = filterString(pair_s[1])
+            if reference == ' ' or candidate == ' ':
+                continue
             print(reference+"-----"+candidate)
             score += sentence_bleu([reference.strip().split(' ')], candidate.strip().split(' '), smoothing_function=cc.method3)
             #score += sentence_bleu([reference.strip().split(' ')], candidate.strip().split(' '), weights=[1, 0, 0, 0])
