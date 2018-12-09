@@ -6,13 +6,9 @@ import torch
 import torch.nn as nn
 from torch import optim
 import torch.nn.functional as F
-from dataHandle import prepareData
 import time
-import math
-import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
-from config import EOS_token, SOS_token, Hidden_size, Teacher_forcing_ratio, MAX_LENGTH, IterTimes, r_api, r_name, dropout, Transferred_Model_Path, NL_Model_Path
-from dataHandle import indexesFromSentence, tensorFromSentence, tensorsFromPair,asMinutes,timeSince
+from config import EOS_token, SOS_token, Hidden_size, Teacher_forcing_ratio, MAX_LENGTH, IterTimes, r_api, r_name, dropout, Transferred_Model_Path, NL_Model_Path, printTimes, NL_s_task
+from dataHandle import indexesFromSentence, tensorFromSentence, tensorsFromPair,asMinutes,timeSince, prepareData, showPlot
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -69,6 +65,45 @@ class AttnDecoderRNN(nn.Module):
     def initHidden(self):
         return torch.zeros(1, 1, self.hidden_size, device=device)
 
+class Attn(torch.nn.Module):
+    def __init__(self, method, hidden_size):
+        super(Attn, self).__init__()
+        self.method = method
+        if self.method not in ['dot', 'general', 'concat']:
+            raise ValueError(self.method, "is not an appropriate attention method.")
+        self.hidden_size = hidden_size
+        if self.method == 'general':
+            self.attn = torch.nn.Linear(self.hidden_size, hidden_size)
+        elif self.method == 'concat':
+            self.attn = torch.nn.Linear(self.hidden_size * 2, hidden_size)
+            self.v = torch.nn.Parameter(torch.FloatTensor(hidden_size))
+
+    def dot_score(self, hidden, encoder_output):
+        return torch.sum(hidden * encoder_output, dim=2)
+
+    def general_score(self, hidden, encoder_output):
+        energy = self.attn(encoder_output)
+        return torch.sum(hidden * energy, dim=2)
+
+    def concat_score(self, hidden, encoder_output):
+        energy = self.attn(torch.cat((hidden.expand(encoder_output.size(0), -1, -1), encoder_output), 2)).tanh()
+        return torch.sum(self.v * energy, dim=2)
+
+    def forward(self, hidden, encoder_outputs):
+        # Calculate the attention weights (energies) based on the given method
+        if self.method == 'general':
+            attn_energies = self.general_score(hidden, encoder_outputs)
+        elif self.method == 'concat':
+            attn_energies = self.concat_score(hidden, encoder_outputs)
+        elif self.method == 'dot':
+            attn_energies = self.dot_score(hidden, encoder_outputs)
+
+        # Transpose max_length and batch_size dimensions
+        attn_energies = attn_energies.t()
+
+        # Return the softmax normalized probability scores (with added dimension)
+        return F.softmax(attn_energies, dim=1).unsqueeze(1)
+
 def train(input_tensor1, input_tensor2, target_tensor, encoder1, encoder2 , decoder, encoder1_optimizer, encoder2_optimizer, decoder_optimizer, criterion, max_length=MAX_LENGTH):
     encoder_hidden_1 = encoder1.initHidden()
     encoder_hidden_2 = encoder2.initHidden()
@@ -87,12 +122,12 @@ def train(input_tensor1, input_tensor2, target_tensor, encoder1, encoder2 , deco
     for ei in range(input_length):
         encoder_output_1, encoder_hidden_1 = encoder1(input_tensor1[ei], encoder_hidden_1)
         encoder_output_2, encoder_hidden_2 = encoder2(input_tensor2[ei], encoder_hidden_2)
-        encoder_outputs[ei] = torch.add(torch.mul(encoder_output_1[0, 0], r_api), torch.mul(encoder_output_2[0, 0], r_name))
+        encoder_outputs[ei] = torch.add(encoder_output_1[0, 0], encoder_output_2[0, 0])
         #print("encoder_outputs[ei]:",encoder_outputs[ei])
 
     decoder_input = torch.tensor([[SOS_token]], device=device)
 
-    decoder_hidden = torch.add(torch.mul(encoder_hidden_1, r_api), torch.mul(encoder_hidden_2, r_name))
+    decoder_hidden = torch.add(encoder_hidden_1, encoder_hidden_2)
     #print("decoder_hidden.shape:", decoder_hidden.shape)
 
     use_teacher_forcing = True if random.random() < Teacher_forcing_ratio else False
@@ -222,47 +257,17 @@ def evaluate2AndShowAttention(encoder1, encoder2, attn_decoder1, input_sentence,
     print('output =', ' '.join(output_words))
     #showAttention(input_sentence, output_words, attentions)
 
-######################################################################
-# Plotting results
-# ----------------
-#
-# Plotting is done with matplotlib, using the array of loss values
-# ``plot_losses`` saved while training.
-#
-plt.switch_backend('agg')
-def showPlot(points):
-    plt.figure()
-    fig, ax = plt.subplots()
-    # this locator puts ticks at regular intervals
-    loc = ticker.MultipleLocator(base=0.2)
-    ax.yaxis.set_major_locator(loc)
-    plt.plot(points)
-
-def showAttention(input_sentence, output_words, attentions):
-    # Set up figure with colorbar
-    fig = plt.figure()
-    ax = fig.add_subplot(111)
-    cax = ax.matshow(attentions.numpy(), cmap='bone')
-    fig.colorbar(cax)
-
-    # Set up axes
-    ax.set_xticklabels([''] + input_sentence.split(' ') +
-                       ['<EOS>'], rotation=90)
-    ax.set_yticklabels([''] + output_words)
-
-    # Show label at every tick
-    ax.xaxis.set_major_locator(ticker.MultipleLocator(1))
-    ax.yaxis.set_major_locator(ticker.MultipleLocator(1))
-
-    plt.show()
-
 def main():
-    input_lang, output_lang, pairs = prepareData()
+    input_lang, output_lang, pairs = prepareData(data_path=NL_s_task)
     print(random.choice(pairs))
 
     checkpoint = torch.load(Transferred_Model_Path)
+    for key, v in checkpoint.items():
+        if key == 'Encoder1_state_dict':
+            encoder1_input_size = v['embedding.weight'].shape[0]
+            encoder1_hidden_size = v['embedding.weight'].shape[1]
 
-    encoder1 = EncoderRNN(input_lang.n_words, Hidden_size).to(device)
+    encoder1 = EncoderRNN(encoder1_input_size, encoder1_hidden_size).to(device)
     encoder2 = EncoderRNN(input_lang.n_words, Hidden_size).to(device)
     attn_decoder1 = AttnDecoderRNN(Hidden_size, output_lang.n_words, dropout_p=dropout).to(device)
 
@@ -270,7 +275,7 @@ def main():
     encoder1.eval()
 
     encoder1, encoder2, attn_decoder1, encoder1_optimizer, encoder2_optimizer, decoder1_optimizer = trainIters(
-        encoder1, encoder2, attn_decoder1, IterTimes, pairs, input_lang, output_lang, print_every=5000)
+        encoder1, encoder2, attn_decoder1, IterTimes, pairs, input_lang, output_lang, print_every=printTimes)
 
     torch.save({
         'Encoder1_state_dict': encoder1.state_dict(),

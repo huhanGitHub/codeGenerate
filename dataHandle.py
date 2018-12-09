@@ -6,7 +6,9 @@ import pickle
 import random
 import time
 import math
-from config import Data_path, Test_ratio, MAX_LENGTH, EOS_token
+import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+from config import Clue_s_task_Data_path, Test_ratio, MAX_LENGTH, EOS_token
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -74,8 +76,8 @@ def filterPairs(pairs):
     return [pair for pair in pairs if filterPair(pair)]
 
 
-def prepareData():
-    input_lang, output_lang, pairs = readData(Data_path)
+def prepareData(data_path=Clue_s_task_Data_path):
+    input_lang, output_lang, pairs = readData(data_path)
     print("Read %s sentence pairs" % len(pairs))
     pairs = filterPairs(pairs)
     print("Trimmed to %s sentence pairs" % len(pairs))
@@ -145,7 +147,6 @@ def tensorsFromPair(pair, input_lang, output_lang):
     target_tensor = tensorFromSentence(output_lang, pair[2])
     return (input_tensor_1, input_tensor_2, target_tensor)
 
-
 def asMinutes(s):
     m = math.floor(s / 60)
     s -= m * 60
@@ -158,6 +159,41 @@ def timeSince(since, percent):
     es = s / (percent)
     rs = es - s
     return '%s (- %s)' % (asMinutes(s), asMinutes(rs))
+
+######################################################################
+# Plotting results
+# ----------------
+#
+# Plotting is done with matplotlib, using the array of loss values
+# ``plot_losses`` saved while training.
+#
+plt.switch_backend('agg')
+def showPlot(points):
+    plt.figure()
+    fig, ax = plt.subplots()
+    # this locator puts ticks at regular intervals
+    loc = ticker.MultipleLocator(base=0.2)
+    ax.yaxis.set_major_locator(loc)
+    plt.plot(points)
+
+def showAttention(input_sentence, output_words, attentions):
+    # Set up figure with colorbar
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    cax = ax.matshow(attentions.numpy(), cmap='bone')
+    fig.colorbar(cax)
+
+    # Set up axes
+    ax.set_xticklabels([''] + input_sentence.split(' ') +
+                       ['<EOS>'], rotation=90)
+    ax.set_yticklabels([''] + output_words)
+
+    # Show label at every tick
+    ax.xaxis.set_major_locator(ticker.MultipleLocator(1))
+    ax.yaxis.set_major_locator(ticker.MultipleLocator(1))
+
+    plt.show()
+
 
 def main():
     prepareData()

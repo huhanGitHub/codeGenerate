@@ -1,7 +1,6 @@
 import torch
 from clue_summarization_task import EncoderRNN,  device, AttnDecoderRNN, evaluate
-from dataHandle import Dictionary
-from config import MODEL_PATH, dropout
+from config import NL_Model_Path, dropout
 
 import pickle
 from clue_summarization_task import Hidden_size
@@ -9,7 +8,7 @@ from config import Path_eval, Path_compare
 
 
 def main():
-    checkpoint = torch.load(MODEL_PATH)
+    checkpoint = torch.load(NL_Model_Path)
     encoder1_input_size = 2
     encoder1_hidden_size = Hidden_size
 

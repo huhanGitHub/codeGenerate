@@ -8,11 +8,8 @@ from torch import optim
 import torch.nn.functional as F
 from dataHandle import prepareData
 import time
-import math
-import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
-from config import EOS_token, SOS_token, Hidden_size, Teacher_forcing_ratio, MAX_LENGTH, IterTimes, r_api, r_name, dropout, Transferred_Model_Path
-from dataHandle import indexesFromSentence, tensorFromSentence, tensorsFromPair,asMinutes,timeSince
+from config import EOS_token, SOS_token, Hidden_size, Teacher_forcing_ratio, MAX_LENGTH, IterTimes, r_api, r_name, dropout, Transferred_Model_Path, printTimes, Output_size, Clue_s_task_Data_path
+from dataHandle import indexesFromSentence, tensorFromSentence, tensorsFromPair, asMinutes, timeSince, showPlot
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -35,7 +32,7 @@ class EncoderRNN(nn.Module):
 
 
 class AttnDecoderRNN(nn.Module):
-    def __init__(self, hidden_size=128, output_size=128, dropout_p=dropout, max_length=MAX_LENGTH):
+    def __init__(self, hidden_size=Hidden_size, output_size=Output_size, dropout_p=dropout, max_length=MAX_LENGTH):
         super(AttnDecoderRNN, self).__init__()
         self.hidden_size = hidden_size
         self.output_size = output_size
@@ -69,26 +66,6 @@ class AttnDecoderRNN(nn.Module):
 
     def initHidden(self):
         return torch.zeros(1, 1, self.hidden_size, device=device)
-
-def indexesFromSentence(lang, sentence):
-    #print(sentence)
-    #print(lang.word2index)
-    return [lang.word2index[word] for word in sentence.split(' ')]
-
-def tensorFromSentence(lang, sentence):
-    indexes = indexesFromSentence(lang, sentence)
-    indexes.append(EOS_token)
-    return torch.tensor(indexes, dtype=torch.long, device=device).view(-1, 1)
-
-def tensorsFromPair(pair, input_lang, output_lang):
-    pair = pair.split('\',\'')
-    pair[0] = pair[0][1:]
-    pair[2] = pair[2][:len(pair[2]) - 1]
-
-    input_tensor_1 = tensorFromSentence(input_lang, pair[0])
-    input_tensor_2 = tensorFromSentence(input_lang, pair[1])
-    target_tensor = tensorFromSentence(output_lang, pair[2])
-    return (input_tensor_1, input_tensor_2, target_tensor)
 
 def train(input_tensor1, input_tensor2, target_tensor, encoder1, encoder2 , decoder, encoder1_optimizer, encoder2_optimizer, decoder_optimizer, criterion, max_length=MAX_LENGTH):
     encoder_hidden_1 = encoder1.initHidden()
@@ -145,10 +122,6 @@ def train(input_tensor1, input_tensor2, target_tensor, encoder1, encoder2 , deco
     decoder_optimizer.step()
 
     return loss.item() / target_length, encoder1_optimizer, encoder2_optimizer, decoder_optimizer
-
-
-
-
 
 def trainIters(encoder1, encoder2, decoder, n_iters, pairs, input_lang, output_lang, print_every=1000, plot_every=100, learning_rate=0.01):
     start = time.time()
@@ -247,42 +220,8 @@ def evaluate2AndShowAttention(encoder1, encoder2, attn_decoder1, input_sentence,
     print('output =', ' '.join(output_words))
     #showAttention(input_sentence, output_words, attentions)
 
-######################################################################
-# Plotting results
-# ----------------
-#
-# Plotting is done with matplotlib, using the array of loss values
-# ``plot_losses`` saved while training.
-#
-plt.switch_backend('agg')
-def showPlot(points):
-    plt.figure()
-    fig, ax = plt.subplots()
-    # this locator puts ticks at regular intervals
-    loc = ticker.MultipleLocator(base=0.2)
-    ax.yaxis.set_major_locator(loc)
-    plt.plot(points)
-
-def showAttention(input_sentence, output_words, attentions):
-    # Set up figure with colorbar
-    fig = plt.figure()
-    ax = fig.add_subplot(111)
-    cax = ax.matshow(attentions.numpy(), cmap='bone')
-    fig.colorbar(cax)
-
-    # Set up axes
-    ax.set_xticklabels([''] + input_sentence.split(' ') +
-                       ['<EOS>'], rotation=90)
-    ax.set_yticklabels([''] + output_words)
-
-    # Show label at every tick
-    ax.xaxis.set_major_locator(ticker.MultipleLocator(1))
-    ax.yaxis.set_major_locator(ticker.MultipleLocator(1))
-
-    plt.show()
-
 def main():
-    input_lang, output_lang, pairs = prepareData()
+    input_lang, output_lang, pairs = prepareData(data_path=Clue_s_task_Data_path)
     print(random.choice(pairs))
 
     encoder1 = EncoderRNN(input_lang.n_words, Hidden_size).to(device)
@@ -291,7 +230,7 @@ def main():
     attn_decoder1 = AttnDecoderRNN(Hidden_size, output_lang.n_words, dropout_p=0.1).to(device)
 
     encoder1, encoder2, attn_decoder1, encoder1_optimizer, encoder2_optimizer, decoder1_optimizer = trainIters(
-        encoder1, encoder2, attn_decoder1, IterTimes, pairs, input_lang, output_lang, print_every=5000)
+        encoder1, encoder2, attn_decoder1, IterTimes, pairs, input_lang, output_lang, print_every=printTimes)
 
     torch.save({
         'Encoder1_state_dict': encoder1.state_dict(),
