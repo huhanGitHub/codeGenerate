@@ -203,22 +203,6 @@ def evaluate(encoder1, encoder2, decoder, sentence1, sentences2, input_lang, out
 
         return decoded_words, decoder_attentions[:di + 1]
 
-def evaluateRandomly(encoder1, encoder2, decoder, pairs, input_lang, output_lang, n=10):
-    for i in range(n):
-        pair = random.choice(pairs)
-        print('>', pair[0])
-        print('=', pair[1])
-        output_words, attentions = evaluate(encoder1, encoder2, decoder, pair[0],input_lang, output_lang)
-        output_sentence = ' '.join(output_words)
-        print('<', output_sentence)
-        print('')
-
-def evaluate2AndShowAttention(encoder1, encoder2, attn_decoder1, input_sentence, input_lang, output_lang):
-    output_words, attentions = evaluate(
-        encoder1, encoder2, attn_decoder1, input_sentence, input_lang, output_lang)
-    print('input =', input_sentence)
-    print('output =', ' '.join(output_words))
-    #showAttention(input_sentence, output_words, attentions)
 
 def main():
     print(os.getcwd())
@@ -230,19 +214,7 @@ def main():
 
     attn_decoder1 = AttnDecoderRNN(Hidden_size, output_lang.n_words, dropout_p=0.1).to(device)
 
-    encoder1, encoder2, attn_decoder1, encoder1_optimizer, encoder2_optimizer, decoder1_optimizer = trainIters(
-        encoder1, encoder2, attn_decoder1, IterTimes, pairs, input_lang, output_lang, print_every=printTimes)
-
-    torch.save({
-        'Encoder1_state_dict': encoder1.state_dict(),
-        'Encoder2_state_dict': encoder2.state_dict(),
-        'Decoder_state_dict': attn_decoder1.state_dict(),
-        'encoder1_optimizer': encoder1_optimizer,
-        'encoder2_optimizer': encoder2_optimizer,
-        'decoder1_optimizer': decoder1_optimizer,
-        'input_lang': input_lang,
-        'output_lang': output_lang,
-        }, Transferred_Model_Path)
+    trainIters(encoder1, encoder2, attn_decoder1, IterTimes, pairs, input_lang, output_lang, print_every=printTimes)
 
 if __name__=="__main__":
     main()

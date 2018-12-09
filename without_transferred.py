@@ -67,15 +67,17 @@ class AttnDecoderRNN(nn.Module):
     def initHidden(self):
         return torch.zeros(1, 1, self.hidden_size, device=device)
 
-def train(input_tensor1, input_tensor2, target_tensor, encoder1, encoder2 , decoder, encoder1_optimizer, encoder2_optimizer, decoder_optimizer, criterion, max_length=MAX_LENGTH):
+def train(input_tensor1, input_tensor2, input_tensor3, target_tensor, encoder1, encoder2, encoder3, decoder, encoder1_optimizer, encoder2_optimizer, encoder3_optimizer, decoder_optimizer, criterion, max_length=MAX_LENGTH):
     encoder_hidden_1 = encoder1.initHidden()
     encoder_hidden_2 = encoder2.initHidden()
-
+    encoder_hidden_3 = encoder3.initHodden()
     encoder1_optimizer.zero_grad()
     encoder2_optimizer.zero_grad()
+    encoder3_optimizer.zero_grad()
     decoder_optimizer.zero_grad()
 
     input_length = input_tensor1.size(0) if input_tensor1.size(0) < input_tensor2.size(0) else input_tensor2.size(0)
+    input_length = input_length if input_length < input_tensor3.size(0) else input_tensor3.size(0)
     target_length = target_tensor.size(0)
 
     encoder_outputs = torch.zeros(max_length, encoder1.hidden_size, device=device)
@@ -85,12 +87,13 @@ def train(input_tensor1, input_tensor2, target_tensor, encoder1, encoder2 , deco
     for ei in range(input_length):
         encoder_output_1, encoder_hidden_1 = encoder1(input_tensor1[ei], encoder_hidden_1)
         encoder_output_2, encoder_hidden_2 = encoder2(input_tensor2[ei], encoder_hidden_2)
-        encoder_outputs[ei] = torch.add(torch.mul(encoder_output_1[0, 0], r_api), torch.mul(encoder_output_2[0, 0], r_name))
+        encoder_output_3, encoder_hidden_3 = encoder2(input_tensor3[ei], encoder_hidden_3)
+        encoder_outputs[ei] = torch.add(encoder_output_1[0, 0], encoder_output_2[0, 0], encoder_output_3[0, 0])
         #print("encoder_outputs[ei]:",encoder_outputs[ei])
 
     decoder_input = torch.tensor([[SOS_token]], device=device)
 
-    decoder_hidden = torch.add(torch.mul(encoder_hidden_1, r_api), torch.mul(encoder_hidden_2, r_name))
+    decoder_hidden = torch.add(encoder_hidden_1, encoder_hidden_2, encoder_output_3)
     #print("decoder_hidden.shape:", decoder_hidden.shape)
 
     use_teacher_forcing = True if random.random() < Teacher_forcing_ratio else False
@@ -119,11 +122,12 @@ def train(input_tensor1, input_tensor2, target_tensor, encoder1, encoder2 , deco
 
     encoder1_optimizer.step()
     encoder2_optimizer.step()
+    encoder3_optimizer.step()
     decoder_optimizer.step()
 
-    return loss.item() / target_length, encoder1_optimizer, encoder2_optimizer, decoder_optimizer
+    return loss.item() / target_length, encoder1_optimizer, encoder2_optimizer, encoder3_optimizer, decoder_optimizer
 
-def trainIters(encoder1, encoder2, decoder, n_iters, pairs, input_lang, output_lang, print_every=1000, plot_every=100, learning_rate=0.01):
+def trainIters(encoder1, encoder2, encoder3, decoder, n_iters, pairs, input_lang, output_lang, print_every=1000, plot_every=100, learning_rate=0.01):
     start = time.time()
     plot_losses = []
     print_loss_total = 0  # Reset every print_every
@@ -131,22 +135,22 @@ def trainIters(encoder1, encoder2, decoder, n_iters, pairs, input_lang, output_l
 
     encoder1_optimizer = optim.Adam(encoder1.parameters(), lr=learning_rate)
     encoder2_optimizer = optim.Adam(encoder2.parameters(), lr=learning_rate)
+    encoder3_optimizer = optim.Adam(encoder2.parameters(), lr=learning_rate)
     decoder_optimizer = optim.Adam(decoder.parameters(), lr=learning_rate)
     training_pairs = [tensorsFromPair(random.choice(pairs), input_lang, output_lang)
                       for i in range(n_iters)]
     criterion = nn.NLLLoss()
-
-    middle=int(n_iters/2)
 
     for iter in range(1, n_iters + 1):
         training_pair = training_pairs[iter - 1]
         #print(training_pair)
         input_tensor1 = training_pair[0]
         input_tensor2 = training_pair[1]
-        target_tensor = training_pair[2]
+        input_tensor3 = training_pair[2]
+        target_tensor = training_pair[3]
 
-        loss, encoder1_optimizer, encoder2_optimizer, decoder1_optimizer = train(input_tensor1, input_tensor2, target_tensor, encoder1, encoder2,
-                     decoder, encoder1_optimizer, encoder2_optimizer, decoder_optimizer, criterion)
+        loss, encoder1_optimizer, encoder2_optimizer, encoder3_optimizer, decoder1_optimizer = train(input_tensor1, input_tensor2, input_tensor3, target_tensor, encoder1, encoder2,
+                     encoder3, decoder, encoder1_optimizer, encoder2_optimizer, decoder_optimizer, criterion)
         print_loss_total += loss
         plot_loss_total += loss
 
@@ -162,63 +166,8 @@ def trainIters(encoder1, encoder2, decoder, n_iters, pairs, input_lang, output_l
             plot_loss_total = 0
 
     showPlot(plot_losses)
-    return encoder1, encoder2, decoder, encoder1_optimizer, encoder2_optimizer, decoder_optimizer
+    return encoder1, encoder2, encoder3, decoder, encoder1_optimizer, encoder2_optimizer, encoder3_optimizer, decoder_optimizer
 
-def evaluate(encoder1, encoder2, decoder, sentence1, sentences2, input_lang, output_lang, max_length=MAX_LENGTH):
-    with torch.no_grad():
-        input_tensor1 = tensorFromSentence(input_lang, sentence1)
-        input_tensor2 = tensorFromSentence(input_lang, sentences2)
-
-        input_length = input_tensor1.size(0) if input_tensor1.size(0) < input_tensor2.size(0) else input_tensor2.size(0)
-
-        encoder_hidden_1 = encoder1.initHidden()
-        encoder_hidden_2 = encoder2.initHidden()
-
-        encoder_outputs = torch.zeros(max_length, encoder1.hidden_size, device=device)
-
-        for ei in range(input_length):
-            encoder_output_1, encoder1_hidden = encoder1(input_tensor1[ei], encoder1_hidden)
-            encoder_output_2, encoder2_hidden = encoder2(input_tensor2[ei], encoder2_hidden)
-            encoder_outputs[ei] += torch.add(torch.mul(encoder_output_1[0, 0], r_api),
-                                            torch.mul(encoder_output_2[0, 0], r_name))
-
-        decoder_input = torch.tensor([[SOS_token]], device=device)  # SOS
-        decoder_hidden = torch.add(torch.mul(encoder_hidden_1, r_api), torch.mul(encoder_hidden_2, r_name))
-
-        decoded_words = []
-        decoder_attentions = torch.zeros(max_length, max_length)
-
-        for di in range(max_length):
-            decoder_output, decoder_hidden, decoder_attention = decoder(
-                decoder_input, decoder_hidden, encoder_outputs)
-            decoder_attentions[di] = decoder_attention.data
-            topv, topi = decoder_output.data.topk(1)
-            if topi.item() == EOS_token:
-                decoded_words.append('')
-                break
-            else:
-                decoded_words.append(output_lang.index2word[topi.item()])
-
-            decoder_input = topi.squeeze().detach()
-
-        return decoded_words, decoder_attentions[:di + 1]
-
-def evaluateRandomly(encoder1, encoder2, decoder, pairs, input_lang, output_lang, n=10):
-    for i in range(n):
-        pair = random.choice(pairs)
-        print('>', pair[0])
-        print('=', pair[1])
-        output_words, attentions = evaluate(encoder1, encoder2, decoder, pair[0],input_lang, output_lang)
-        output_sentence = ' '.join(output_words)
-        print('<', output_sentence)
-        print('')
-
-def evaluate2AndShowAttention(encoder1, encoder2, attn_decoder1, input_sentence, input_lang, output_lang):
-    output_words, attentions = evaluate(
-        encoder1, encoder2, attn_decoder1, input_sentence, input_lang, output_lang)
-    print('input =', input_sentence)
-    print('output =', ' '.join(output_words))
-    #showAttention(input_sentence, output_words, attentions)
 
 def main():
     input_lang, output_lang, pairs = prepareData(data_path=Clue_s_task_Data_path)
@@ -226,22 +175,10 @@ def main():
 
     encoder1 = EncoderRNN(input_lang.n_words, Hidden_size).to(device)
     encoder2 = EncoderRNN(input_lang.n_words, Hidden_size).to(device)
+    encoder3 = EncoderRNN(input_lang.n_words, Hidden_size).to(device)
 
     attn_decoder1 = AttnDecoderRNN(Hidden_size, output_lang.n_words, dropout_p=0.1).to(device)
-
-    encoder1, encoder2, attn_decoder1, encoder1_optimizer, encoder2_optimizer, decoder1_optimizer = trainIters(
-        encoder1, encoder2, attn_decoder1, IterTimes, pairs, input_lang, output_lang, print_every=printTimes)
-
-    torch.save({
-        'Encoder1_state_dict': encoder1.state_dict(),
-        'Encoder2_state_dict': encoder2.state_dict(),
-        'Decoder_state_dict': attn_decoder1.state_dict(),
-        'encoder1_optimizer': encoder1_optimizer,
-        'encoder2_optimizer': encoder2_optimizer,
-        'decoder1_optimizer': decoder1_optimizer,
-        'input_lang': input_lang,
-        'output_lang': output_lang,
-        }, Transferred_Model_Path)
+    trainIters(encoder1, encoder2, encoder3, attn_decoder1, IterTimes, pairs, input_lang, output_lang, print_every=printTimes)
 
 if __name__=="__main__":
     main()

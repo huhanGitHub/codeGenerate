@@ -194,23 +194,6 @@ def evaluate(encoder, decoder, sentence1, sentences2, input_lang, output_lang, m
 
         return decoded_words, decoder_attentions[:di + 1]
 
-def evaluateRandomly(encoder, decoder, pairs, input_lang, output_lang, n=10):
-    for i in range(n):
-        pair = random.choice(pairs)
-        print('>', pair[0])
-        print('=', pair[1])
-        output_words, attentions = evaluate(encoder, decoder, pair[0],input_lang, output_lang)
-        output_sentence = ' '.join(output_words)
-        print('<', output_sentence)
-        print('')
-
-def evaluate2AndShowAttention(encoder, attn_decoder, input_sentence, input_lang, output_lang):
-    output_words, attentions = evaluate(
-        encoder, attn_decoder, input_sentence, input_lang, output_lang)
-    print('input =', input_sentence)
-    print('output =', ' '.join(output_words))
-    #showAttention(input_sentence, output_words, attentions)
-
 def main():
     input_lang, output_lang, pairs = prepareData(data_path=NL_only_task)
     print(random.choice(pairs))
@@ -219,8 +202,7 @@ def main():
 
     attn_decoder = AttnDecoderRNN(Hidden_size, output_lang.n_words, dropout_p=0.1).to(device)
 
-    encoder, attn_decoder, encoder_optimizer, decoder_optimizer = trainIters(
-        encoder, attn_decoder, IterTimes, pairs, input_lang, output_lang, print_every=printTimes)
+    trainIters(encoder, attn_decoder, IterTimes, pairs, input_lang, output_lang, print_every=printTimes)
 
 if __name__=="__main__":
     main()
