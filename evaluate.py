@@ -1,11 +1,10 @@
 import torch
-from torch import optim
-from model import EncoderRNN,  device, AttnDecoderRNN, evaluate2AndShowAttention, evaluate
+from clue_summarization_task import EncoderRNN,  device, AttnDecoderRNN, evaluate
 from dataHandle import Dictionary
-from config import MODEL_PATH
+from config import MODEL_PATH, dropout
 
 import pickle
-from model import Hidden_size
+from clue_summarization_task import Hidden_size
 from config import Path_eval, Path_compare
 
 
@@ -43,11 +42,7 @@ def main():
 
     encoder1 = EncoderRNN(encoder1_input_size, encoder1_hidden_size)
     encoder2 = EncoderRNN(encoder2_input_size, encoder2_hidden_size)
-    attn_decoder1 = AttnDecoderRNN(decoder1_hidden_size, decoder1_output_size, dropout_p=0.1).to(device)
-
-    encoder1_optimizer = optim.SGD(encoder1.parameters(), lr=0.01)
-    encoder2_optimizer = optim.SGD(encoder2.parameters(), lr=0.01)
-    decoder_optimizer = optim.SGD(attn_decoder1.parameters(), lr=0.01)
+    attn_decoder1 = AttnDecoderRNN(decoder1_hidden_size, decoder1_output_size, dropout_p=dropout).to(device)
 
     encoder1.load_state_dict(checkpoint['Encoder1_state_dict'])
     encoder1.eval()

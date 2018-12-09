@@ -4,7 +4,9 @@ import unicodedata
 import re
 import pickle
 import random
-from config import Data_path, Test_ratio, MAX_LENGTH
+import time
+import math
+from config import Data_path, Test_ratio, MAX_LENGTH, EOS_token
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -28,12 +30,6 @@ class Dictionary:
             self.n_words += 1
         else:
             self.word2count[word] += 1
-
-######################################################################
-# The files are all in Unicode, to simplify we will turn Unicode
-# characters to ASCII, make everything lowercase, and trim most
-# punctuation.
-#
 
 # Turn a Unicode string to plain ASCII, thanks to
 # http://stackoverflow.com/a/518232/2809427
@@ -66,16 +62,6 @@ def readData(path):
     output_lang = Dictionary('output')
 
     return input_lang, output_lang, lines
-
-eng_prefixes = (
-    "i am ", "i m ",
-    "he is", "he s ",
-    "she is", "she s",
-    "you are", "you re ",
-    "we are", "we re ",
-    "they are", "they re "
-)
-
 
 def filterPair(p):
     #print(p)
@@ -138,6 +124,40 @@ def prepareData():
             f2.write('\n')
 
     return input_lang, output_lang, train
+
+def indexesFromSentence(lang, sentence):
+    #print(sentence)
+    #print(lang.word2index)
+    return [lang.word2index[word] for word in sentence.split(' ')]
+
+def tensorFromSentence(lang, sentence):
+    indexes = indexesFromSentence(lang, sentence)
+    indexes.append(EOS_token)
+    return torch.tensor(indexes, dtype=torch.long, device=device).view(-1, 1)
+
+def tensorsFromPair(pair, input_lang, output_lang):
+    pair = pair.split('\',\'')
+    pair[0] = pair[0][1:]
+    pair[2] = pair[2][:len(pair[2]) - 1]
+
+    input_tensor_1 = tensorFromSentence(input_lang, pair[0])
+    input_tensor_2 = tensorFromSentence(input_lang, pair[1])
+    target_tensor = tensorFromSentence(output_lang, pair[2])
+    return (input_tensor_1, input_tensor_2, target_tensor)
+
+
+def asMinutes(s):
+    m = math.floor(s / 60)
+    s -= m * 60
+    return '%dm %ds' % (m, s)
+
+
+def timeSince(since, percent):
+    now = time.time()
+    s = now - since
+    es = s / (percent)
+    rs = es - s
+    return '%s (- %s)' % (asMinutes(s), asMinutes(rs))
 
 def main():
     prepareData()

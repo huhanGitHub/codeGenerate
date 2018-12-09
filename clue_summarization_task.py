@@ -11,7 +11,8 @@ import time
 import math
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
-from config import EOS_token, SOS_token, Hidden_size, Teacher_forcing_ratio, MAX_LENGTH, IterTimes
+from config import EOS_token, SOS_token, Hidden_size, Teacher_forcing_ratio, MAX_LENGTH, IterTimes, r_api, r_name, dropout, Transferred_Model_Path
+from dataHandle import indexesFromSentence, tensorFromSentence, tensorsFromPair,asMinutes,timeSince
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -34,7 +35,7 @@ class EncoderRNN(nn.Module):
 
 
 class AttnDecoderRNN(nn.Module):
-    def __init__(self, hidden_size=128, output_size=128, dropout_p=0.1, max_length=MAX_LENGTH):
+    def __init__(self, hidden_size=128, output_size=128, dropout_p=dropout, max_length=MAX_LENGTH):
         super(AttnDecoderRNN, self).__init__()
         self.hidden_size = hidden_size
         self.output_size = output_size
@@ -74,7 +75,6 @@ def indexesFromSentence(lang, sentence):
     #print(lang.word2index)
     return [lang.word2index[word] for word in sentence.split(' ')]
 
-
 def tensorFromSentence(lang, sentence):
     indexes = indexesFromSentence(lang, sentence)
     indexes.append(EOS_token)
@@ -108,12 +108,12 @@ def train(input_tensor1, input_tensor2, target_tensor, encoder1, encoder2 , deco
     for ei in range(input_length):
         encoder_output_1, encoder_hidden_1 = encoder1(input_tensor1[ei], encoder_hidden_1)
         encoder_output_2, encoder_hidden_2 = encoder2(input_tensor2[ei], encoder_hidden_2)
-        encoder_outputs[ei] = torch.add(encoder_output_1[0, 0], encoder_output_2[0,0])
+        encoder_outputs[ei] = torch.add(torch.mul(encoder_output_1[0, 0], r_api), torch.mul(encoder_output_2[0, 0], r_name))
         #print("encoder_outputs[ei]:",encoder_outputs[ei])
 
     decoder_input = torch.tensor([[SOS_token]], device=device)
 
-    decoder_hidden = torch.add(encoder_hidden_1,encoder_hidden_2)
+    decoder_hidden = torch.add(torch.mul(encoder_hidden_1, r_api), torch.mul(encoder_hidden_2, r_name))
     #print("decoder_hidden.shape:", decoder_hidden.shape)
 
     use_teacher_forcing = True if random.random() < Teacher_forcing_ratio else False
@@ -149,18 +149,6 @@ def train(input_tensor1, input_tensor2, target_tensor, encoder1, encoder2 , deco
 
 
 
-def asMinutes(s):
-    m = math.floor(s / 60)
-    s -= m * 60
-    return '%dm %ds' % (m, s)
-
-
-def timeSince(since, percent):
-    now = time.time()
-    s = now - since
-    es = s / (percent)
-    rs = es - s
-    return '%s (- %s)' % (asMinutes(s), asMinutes(rs))
 
 def trainIters(encoder1, encoder2, decoder, n_iters, pairs, input_lang, output_lang, print_every=1000, plot_every=100, learning_rate=0.01):
     start = time.time()
@@ -168,9 +156,9 @@ def trainIters(encoder1, encoder2, decoder, n_iters, pairs, input_lang, output_l
     print_loss_total = 0  # Reset every print_every
     plot_loss_total = 0  # Reset every plot_every
 
-    encoder1_optimizer = optim.SGD(encoder1.parameters(), lr=learning_rate)
-    encoder2_optimizer = optim.SGD(encoder2.parameters(), lr=learning_rate)
-    decoder_optimizer = optim.SGD(decoder.parameters(), lr=learning_rate)
+    encoder1_optimizer = optim.Adam(encoder1.parameters(), lr=learning_rate)
+    encoder2_optimizer = optim.Adam(encoder2.parameters(), lr=learning_rate)
+    decoder_optimizer = optim.Adam(decoder.parameters(), lr=learning_rate)
     training_pairs = [tensorsFromPair(random.choice(pairs), input_lang, output_lang)
                       for i in range(n_iters)]
     criterion = nn.NLLLoss()
@@ -203,29 +191,6 @@ def trainIters(encoder1, encoder2, decoder, n_iters, pairs, input_lang, output_l
     showPlot(plot_losses)
     return encoder1, encoder2, decoder, encoder1_optimizer, encoder2_optimizer, decoder_optimizer
 
-
-######################################################################
-# Plotting results
-# ----------------
-#
-# Plotting is done with matplotlib, using the array of loss values
-# ``plot_losses`` saved while training.
-#
-
-
-plt.switch_backend('agg')
-
-import numpy as np
-
-
-def showPlot(points):
-    plt.figure()
-    fig, ax = plt.subplots()
-    # this locator puts ticks at regular intervals
-    loc = ticker.MultipleLocator(base=0.2)
-    ax.yaxis.set_major_locator(loc)
-    plt.plot(points)
-
 def evaluate(encoder1, encoder2, decoder, sentence1, sentences2, input_lang, output_lang, max_length=MAX_LENGTH):
     with torch.no_grad():
         input_tensor1 = tensorFromSentence(input_lang, sentence1)
@@ -233,19 +198,19 @@ def evaluate(encoder1, encoder2, decoder, sentence1, sentences2, input_lang, out
 
         input_length = input_tensor1.size(0) if input_tensor1.size(0) < input_tensor2.size(0) else input_tensor2.size(0)
 
-        encoder1_hidden = encoder1.initHidden()
-        encoder2_hidden = encoder2.initHidden()
+        encoder_hidden_1 = encoder1.initHidden()
+        encoder_hidden_2 = encoder2.initHidden()
 
         encoder_outputs = torch.zeros(max_length, encoder1.hidden_size, device=device)
 
         for ei in range(input_length):
-            encoder1_output, encoder1_hidden = encoder1(input_tensor1[ei],encoder1_hidden)
-            encoder2_output, encoder2_hidden = encoder2(input_tensor2[ei], encoder2_hidden)
-            encoder_outputs[ei] += torch.add(encoder1_output[0, 0], encoder2_output[0, 0])
+            encoder_output_1, encoder1_hidden = encoder1(input_tensor1[ei], encoder1_hidden)
+            encoder_output_2, encoder2_hidden = encoder2(input_tensor2[ei], encoder2_hidden)
+            encoder_outputs[ei] += torch.add(torch.mul(encoder_output_1[0, 0], r_api),
+                                            torch.mul(encoder_output_2[0, 0], r_name))
 
         decoder_input = torch.tensor([[SOS_token]], device=device)  # SOS
-
-        decoder_hidden = torch.add(encoder1_hidden, encoder2_hidden)
+        decoder_hidden = torch.add(torch.mul(encoder_hidden_1, r_api), torch.mul(encoder_hidden_2, r_name))
 
         decoded_words = []
         decoder_attentions = torch.zeros(max_length, max_length)
@@ -275,6 +240,29 @@ def evaluateRandomly(encoder1, encoder2, decoder, pairs, input_lang, output_lang
         print('<', output_sentence)
         print('')
 
+def evaluate2AndShowAttention(encoder1, encoder2, attn_decoder1, input_sentence, input_lang, output_lang):
+    output_words, attentions = evaluate(
+        encoder1, encoder2, attn_decoder1, input_sentence, input_lang, output_lang)
+    print('input =', input_sentence)
+    print('output =', ' '.join(output_words))
+    #showAttention(input_sentence, output_words, attentions)
+
+######################################################################
+# Plotting results
+# ----------------
+#
+# Plotting is done with matplotlib, using the array of loss values
+# ``plot_losses`` saved while training.
+#
+plt.switch_backend('agg')
+def showPlot(points):
+    plt.figure()
+    fig, ax = plt.subplots()
+    # this locator puts ticks at regular intervals
+    loc = ticker.MultipleLocator(base=0.2)
+    ax.yaxis.set_major_locator(loc)
+    plt.plot(points)
+
 def showAttention(input_sentence, output_words, attentions):
     # Set up figure with colorbar
     fig = plt.figure()
@@ -293,20 +281,13 @@ def showAttention(input_sentence, output_words, attentions):
 
     plt.show()
 
-def evaluate2AndShowAttention(encoder1, encoder2, attn_decoder1, input_sentence, input_lang, output_lang):
-    output_words, attentions = evaluate(
-        encoder1, encoder2, attn_decoder1, input_sentence, input_lang, output_lang)
-    print('input =', input_sentence)
-    print('output =', ' '.join(output_words))
-    #showAttention(input_sentence, output_words, attentions)
-
-
 def main():
     input_lang, output_lang, pairs = prepareData()
     print(random.choice(pairs))
 
     encoder1 = EncoderRNN(input_lang.n_words, Hidden_size).to(device)
     encoder2 = EncoderRNN(input_lang.n_words, Hidden_size).to(device)
+
     attn_decoder1 = AttnDecoderRNN(Hidden_size, output_lang.n_words, dropout_p=0.1).to(device)
 
     encoder1, encoder2, attn_decoder1, encoder1_optimizer, encoder2_optimizer, decoder1_optimizer = trainIters(
@@ -321,9 +302,7 @@ def main():
         'decoder1_optimizer': decoder1_optimizer,
         'input_lang': input_lang,
         'output_lang': output_lang,
-        }, 'save/model.pkl')
-
-    # evaluate2AndShowAttention(encoder1, encoder2, attn_decoder1, "c est un jeune directeur plein de talent .", input_lang, output_lang)
+        }, Transferred_Model_Path)
 
 if __name__=="__main__":
     main()

@@ -1,8 +1,4 @@
 # -*- coding:utf-8 -*-
-"""
-Description:
-    1) 使用nltk包中的bleu计算工具来进行辅助计算
-"""
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 from dataHandle import filterPair
 import  re
