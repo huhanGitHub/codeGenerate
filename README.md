@@ -1,5 +1,5 @@
 # codeGenerate
-## (1) How to run the mdoel \n
+## (1) How to run the mdoel
 run clue_summarization_task.py firstly, and the script will generate a transferred encoder, and after running the script, run NL_summarization_task.py.
 
 ## (2) Dataset
