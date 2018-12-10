@@ -1,6 +1,6 @@
 # codeGenerate
 ## (1) How to run the mdoel
-run *clue_summarization_task.py* firstly, and the script will generate a transferred encoder, and after running the script, run *NL_summarization_task.py*.
+run *clue_summarization_task.py* firstly, and the script will generate a transferred encoder, and when the loss is stable or finish running the script, run *NL_summarization_task.py*. Finish trainning, run evaluate.py will evaluate the model, then run bleu.py will compute the bleu score.
 
 ## (2) Dataset
 Our dataset is collect form three open source dataset:BigCloneBench(https://github.com/clonebench/BigCloneBench/blob/master/README.md), 
