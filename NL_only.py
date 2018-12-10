@@ -8,7 +8,7 @@ from torch import optim
 import torch.nn.functional as F
 from dataHandle import prepareData
 import time
-from config import EOS_token, SOS_token, Hidden_size, Teacher_forcing_ratio, MAX_LENGTH, IterTimes, r_api, r_name, dropout, Transferred_Model_Path, printTimes, Output_size, NL_only_task
+from config import EOS_token, SOS_token, Hidden_size, Teacher_forcing_ratio, MAX_LENGTH, IterTimes, r_api, r_name, dropout, printTimes, Output_size, Other_task
 from dataHandle import indexesFromSentence, tensorFromSentence, tensorsFromPair, asMinutes, timeSince, showPlot
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -67,27 +67,29 @@ class AttnDecoderRNN(nn.Module):
     def initHidden(self):
         return torch.zeros(1, 1, self.hidden_size, device=device)
 
-def train(input_tensor, target_tensor, encoder, decoder, encoder_optimizer, decoder_optimizer, criterion, max_length=MAX_LENGTH):
-    encoder_hidden = encoder.initHidden()
+def train(input_tensor1, target_tensor, encoder1, decoder, encoder1_optimizer, decoder_optimizer, criterion, max_length=MAX_LENGTH):
+    encoder_hidden_1 = encoder1.initHidden()
 
-    encoder_optimizer.zero_grad()
+
+    encoder1_optimizer.zero_grad()
 
     decoder_optimizer.zero_grad()
 
-    input_length = input_tensor.size(0)
+    input_length = input_tensor1.size(0)
     target_length = target_tensor.size(0)
 
-    encoder_outputs = torch.zeros(max_length, encoder.hidden_size, device=device)
+    encoder_outputs = torch.zeros(max_length, encoder1.hidden_size, device=device)
 
     loss = 0
 
     for ei in range(input_length):
-        encoder_output, encoder_hidden = encoder(input_tensor[ei], encoder_hidden)
-        encoder_outputs[ei] = encoder_output[0, 0]
+        encoder_output_1, encoder_hidden_1 = encoder1(input_tensor1[ei], encoder_hidden_1)
+        encoder_outputs[ei] = encoder_output_1[0, 0]
+        #print("encoder_outputs[ei]:",encoder_outputs[ei])
 
     decoder_input = torch.tensor([[SOS_token]], device=device)
 
-    decoder_hidden = encoder_hidden
+    decoder_hidden = encoder_hidden_1
     #print("decoder_hidden.shape:", decoder_hidden.shape)
 
     use_teacher_forcing = True if random.random() < Teacher_forcing_ratio else False
@@ -114,33 +116,31 @@ def train(input_tensor, target_tensor, encoder, decoder, encoder_optimizer, deco
 
     loss.backward()
 
-    encoder_optimizer.step()
+    encoder1_optimizer.step()
     decoder_optimizer.step()
 
-    return loss.item() / target_length, encoder_optimizer, decoder_optimizer
+    return loss.item() / target_length, encoder1_optimizer, decoder_optimizer
 
-def trainIters(encoder, decoder, n_iters, pairs, input_lang, output_lang, print_every=1000, plot_every=100, learning_rate=0.01):
+def trainIters(encoder1, decoder, n_iters, pairs, input_lang, output_lang, print_every=1000, plot_every=100, learning_rate=0.01):
     start = time.time()
     plot_losses = []
     print_loss_total = 0  # Reset every print_every
     plot_loss_total = 0  # Reset every plot_every
 
-    encoder_optimizer = optim.Adam(encoder.parameters(), lr=learning_rate)
+    encoder1_optimizer = optim.Adam(encoder1.parameters(), lr=learning_rate)
     decoder_optimizer = optim.Adam(decoder.parameters(), lr=learning_rate)
     training_pairs = [tensorsFromPair(random.choice(pairs), input_lang, output_lang)
                       for i in range(n_iters)]
     criterion = nn.NLLLoss()
 
-    middle=int(n_iters/2)
-
     for iter in range(1, n_iters + 1):
         training_pair = training_pairs[iter - 1]
         #print(training_pair)
-        input_tensor = training_pair[0]
-        target_tensor = training_pair[2]
+        input_tensor1 = training_pair[1]
+        target_tensor = training_pair[3]
 
-        loss, encoder_optimizer, decoder_optimizer = train(input_tensor, target_tensor, encoder,
-                     decoder, encoder_optimizer, decoder_optimizer, criterion)
+        loss, encoder1_optimizer, decoder1_optimizer = train(input_tensor1, target_tensor, encoder1,
+                     decoder, encoder1_optimizer, decoder_optimizer, criterion)
         print_loss_total += loss
         plot_loss_total += loss
 
@@ -156,25 +156,26 @@ def trainIters(encoder, decoder, n_iters, pairs, input_lang, output_lang, print_
             plot_loss_total = 0
 
     showPlot(plot_losses)
-    return encoder, decoder, encoder_optimizer, decoder_optimizer
+    return encoder1, decoder, encoder1_optimizer, decoder_optimizer
 
-def evaluate(encoder, decoder, sentence1, sentences2, input_lang, output_lang, max_length=MAX_LENGTH):
+def evaluate(encoder1, decoder, sentence1, input_lang, output_lang, max_length=MAX_LENGTH):
     with torch.no_grad():
         input_tensor1 = tensorFromSentence(input_lang, sentence1)
-        input_tensor2 = tensorFromSentence(input_lang, sentences2)
 
-        input_length = input_tensor1.size(0) if input_tensor1.size(0) < input_tensor2.size(0) else input_tensor2.size(0)
 
-        encoder_hidden_1 = encoder.initHidden()
-        encoder_outputs = torch.zeros(max_length, encoder.hidden_size, device=device)
+        input_length = input_tensor1.size(0)
+
+        encoder_hidden_1 = encoder1.initHidden()
+
+        encoder_outputs = torch.zeros(max_length, encoder1.hidden_size, device=device)
 
         for ei in range(input_length):
-            encoder_output, encoder_hidden = encoder(input_tensor1[ei], encoder_hidden)
-            encoder_outputs[ei] += encoder_output[0, 0]
+            encoder_output_1, encoder1_hidden = encoder1(input_tensor1[ei], encoder1_hidden)
+            encoder_outputs[ei] += encoder_output_1[0, 0]
 
 
         decoder_input = torch.tensor([[SOS_token]], device=device)  # SOS
-        decoder_hidden = encoder_hidden
+        decoder_hidden = encoder_hidden_1
 
         decoded_words = []
         decoder_attentions = torch.zeros(max_length, max_length)
@@ -194,15 +195,31 @@ def evaluate(encoder, decoder, sentence1, sentences2, input_lang, output_lang, m
 
         return decoded_words, decoder_attentions[:di + 1]
 
+def evaluateRandomly(encoder1, decoder, pairs, input_lang, output_lang, n=10):
+    for i in range(n):
+        pair = random.choice(pairs)
+        print('>', pair[0])
+        print('=', pair[1])
+        output_words, attentions = evaluate(encoder1, decoder, pair[0], input_lang, output_lang)
+        output_sentence = ' '.join(output_words)
+        print('<', output_sentence)
+        print('')
+
+def evaluate2AndShowAttention(encoder1, attn_decoder1, input_sentence, input_lang, output_lang):
+    output_words, attentions = evaluate(
+        encoder1, attn_decoder1, input_sentence, input_lang, output_lang)
+    print('input =', input_sentence)
+    print('output =', ' '.join(output_words))
+    #showAttention(input_sentence, output_words, attentions)
+
 def main():
-    input_lang, output_lang, pairs = prepareData(data_path=NL_only_task)
+    input_lang, output_lang, pairs = prepareData(data_path=Other_task)
     print(random.choice(pairs))
 
-    encoder = EncoderRNN(input_lang.n_words, Hidden_size).to(device)
+    encoder1 = EncoderRNN(input_lang.n_words, Hidden_size).to(device)
+    attn_decoder1 = AttnDecoderRNN(Hidden_size, output_lang.n_words, dropout_p=0.1).to(device)
 
-    attn_decoder = AttnDecoderRNN(Hidden_size, output_lang.n_words, dropout_p=0.1).to(device)
-
-    trainIters(encoder, attn_decoder, IterTimes, pairs, input_lang, output_lang, print_every=printTimes)
+    trainIters(encoder1, attn_decoder1, IterTimes, pairs, input_lang, output_lang, print_every=printTimes)
 
 if __name__=="__main__":
     main()

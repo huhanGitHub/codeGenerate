@@ -102,14 +102,14 @@ def prepareData(data_path=Clue_s_task_Data_path):
     print(input_lang.name, input_lang.n_words)
     print(output_lang.name, output_lang.n_words)
 
-    with open('save/pairs.txt','w', encoding='utf-8') as f:
+    with open('save/pairs.txt', 'w', encoding='utf-8') as f:
         f.write(str(pairs))
 
-    with open('save/input.dic','wb') as f:
+    with open('save/input.dic', 'wb') as f:
         pickle.dump(input_lang, f)
         #f.write(input_str)
 
-    with open('save/output.dic','wb') as f:
+    with open('save/output.dic', 'wb') as f:
         pickle.dump(output_lang, f)
         #f.write(output_str)
 

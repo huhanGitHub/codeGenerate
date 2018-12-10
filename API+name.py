@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals, print_function, division
 import random
-import os
+
 import torch
 import torch.nn as nn
 from torch import optim
 import torch.nn.functional as F
 from dataHandle import prepareData
 import time
-from config import EOS_token, SOS_token, Hidden_size, Teacher_forcing_ratio, MAX_LENGTH, IterTimes, r_api, r_name, dropout, Transferred_Model_Path, printTimes, Output_size, Clue_s_task_Data_path
+from config import EOS_token, SOS_token, Hidden_size, Teacher_forcing_ratio, MAX_LENGTH, IterTimes, r_api, r_name, dropout, printTimes, Output_size, Other_task
 from dataHandle import indexesFromSentence, tensorFromSentence, tensorsFromPair, asMinutes, timeSince, showPlot
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -75,7 +75,7 @@ def train(input_tensor1, input_tensor2, target_tensor, encoder1, encoder2 , deco
     encoder2_optimizer.zero_grad()
     decoder_optimizer.zero_grad()
 
-    input_length = input_tensor1.size(0) if input_tensor1.size(0) < input_tensor2.size(0) else input_tensor2.size(0)
+    input_length = input_tensor1.size(0) if input_tensor1.size(0) > input_tensor2.size(0) else input_tensor2.size(0)
     target_length = target_tensor.size(0)
 
     encoder_outputs = torch.zeros(max_length, encoder1.hidden_size, device=device)
@@ -83,6 +83,14 @@ def train(input_tensor1, input_tensor2, target_tensor, encoder1, encoder2 , deco
     loss = 0
 
     for ei in range(input_length):
+        if ei >= input_tensor1.size(0):
+            encoder_output_2, encoder_hidden_2 = encoder2(input_tensor2[ei], encoder_hidden_2)
+            encoder_outputs[ei] = encoder_output_2[0, 0]
+            continue
+        elif ei >=input_tensor2.size(0):
+            encoder_output_1, encoder_hidden_1 = encoder1(input_tensor1[ei], encoder_hidden_1)
+            encoder_outputs[ei] = encoder_output_1[0, 0]
+            continue
         encoder_output_1, encoder_hidden_1 = encoder1(input_tensor1[ei], encoder_hidden_1)
         encoder_output_2, encoder_hidden_2 = encoder2(input_tensor2[ei], encoder_hidden_2)
         encoder_outputs[ei] = torch.add(torch.mul(encoder_output_1[0, 0], r_api), torch.mul(encoder_output_2[0, 0], r_name))
@@ -136,14 +144,12 @@ def trainIters(encoder1, encoder2, decoder, n_iters, pairs, input_lang, output_l
                       for i in range(n_iters)]
     criterion = nn.NLLLoss()
 
-    middle=int(n_iters/2)
-
     for iter in range(1, n_iters + 1):
         training_pair = training_pairs[iter - 1]
         #print(training_pair)
         input_tensor1 = training_pair[0]
-        input_tensor2 = training_pair[1]
-        target_tensor = training_pair[2]
+        input_tensor2 = training_pair[2]
+        target_tensor = training_pair[3]
 
         loss, encoder1_optimizer, encoder2_optimizer, decoder1_optimizer = train(input_tensor1, input_tensor2, target_tensor, encoder1, encoder2,
                      decoder, encoder1_optimizer, encoder2_optimizer, decoder_optimizer, criterion)
@@ -169,7 +175,7 @@ def evaluate(encoder1, encoder2, decoder, sentence1, sentences2, input_lang, out
         input_tensor1 = tensorFromSentence(input_lang, sentence1)
         input_tensor2 = tensorFromSentence(input_lang, sentences2)
 
-        input_length = input_tensor1.size(0) if input_tensor1.size(0) < input_tensor2.size(0) else input_tensor2.size(0)
+        input_length = input_tensor1.size(0) if input_tensor1.size(0) > input_tensor2.size(0) else input_tensor2.size(0)
 
         encoder_hidden_1 = encoder1.initHidden()
         encoder_hidden_2 = encoder2.initHidden()
@@ -177,6 +183,14 @@ def evaluate(encoder1, encoder2, decoder, sentence1, sentences2, input_lang, out
         encoder_outputs = torch.zeros(max_length, encoder1.hidden_size, device=device)
 
         for ei in range(input_length):
+            if ei >= input_tensor1.size(0):
+                encoder_output_2, encoder_hidden_2 = encoder2(input_tensor2[ei], encoder_hidden_2)
+                encoder_outputs[ei] += encoder_output_2[0, 0]
+                continue
+            elif ei >= input_tensor2.size(0):
+                encoder_output_1, encoder_hidden_1 = encoder1(input_tensor1[ei], encoder_hidden_1)
+                encoder_outputs[ei] += encoder_output_1[0, 0]
+                continue
             encoder_output_1, encoder1_hidden = encoder1(input_tensor1[ei], encoder1_hidden)
             encoder_output_2, encoder2_hidden = encoder2(input_tensor2[ei], encoder2_hidden)
             encoder_outputs[ei] += torch.add(torch.mul(encoder_output_1[0, 0], r_api),
@@ -203,10 +217,25 @@ def evaluate(encoder1, encoder2, decoder, sentence1, sentences2, input_lang, out
 
         return decoded_words, decoder_attentions[:di + 1]
 
+def evaluateRandomly(encoder1, encoder2, decoder, pairs, input_lang, output_lang, n=10):
+    for i in range(n):
+        pair = random.choice(pairs)
+        print('>', pair[0])
+        print('=', pair[1])
+        output_words, attentions = evaluate(encoder1, encoder2, decoder, pair[0],input_lang, output_lang)
+        output_sentence = ' '.join(output_words)
+        print('<', output_sentence)
+        print('')
+
+def evaluate2AndShowAttention(encoder1, encoder2, attn_decoder1, input_sentence, input_lang, output_lang):
+    output_words, attentions = evaluate(
+        encoder1, encoder2, attn_decoder1, input_sentence, input_lang, output_lang)
+    print('input =', input_sentence)
+    print('output =', ' '.join(output_words))
+    #showAttention(input_sentence, output_words, attentions)
 
 def main():
-    print(os.getcwd())
-    input_lang, output_lang, pairs = prepareData(data_path=Clue_s_task_Data_path)
+    input_lang, output_lang, pairs = prepareData(data_path=Other_task)
     print(random.choice(pairs))
 
     encoder1 = EncoderRNN(input_lang.n_words, Hidden_size).to(device)
