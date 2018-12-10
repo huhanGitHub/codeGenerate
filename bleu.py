@@ -31,7 +31,7 @@ def bleu(path):
             count+=1
 
         score/=count
-        print("The bleu score is: "+str(score))
+        print("\n\nThe bleu score is: "+str(score))
 
 def main():
     bleu('save/compare.txt')

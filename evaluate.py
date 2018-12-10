@@ -1,9 +1,9 @@
 import torch
-from clue_summarization_task import EncoderRNN,  device, AttnDecoderRNN, evaluate
+from NL_summarization_task import EncoderRNN, device, AttnDecoderRNN, evaluate
 from config import NL_Model_Path, dropout
 
 import pickle
-from clue_summarization_task import Hidden_size
+from config import Hidden_size
 from config import Path_eval, Path_compare
 
 
@@ -55,17 +55,17 @@ def main():
         score = 0
         for pair in test_pairs:
             # print(pair)
-            pair = pair.split('\',\'')
-            if len(pair) < 3:
+            pair = pair.split(',')
+            if len(pair) < 4:
                 break
-            pair[0] = pair[0][1:].strip()
-            pair[2] = pair[2][:len(pair[2]) - 1].strip()
-            pair[1] = pair[1].strip()
+            # pair[0] = pair[0][1:].strip()
+            # pair[2] = pair[2][:len(pair[2]) - 1].strip()
+            # pair[1] = pair[1].strip()
 
             sentence1 = pair[0]
             sentence2 = pair[1]
             # print(sentence)
-            reference = pair[2]
+            reference = pair[3]
             # print(reference)
             output_words, attentions = evaluate(encoder1, encoder2, attn_decoder1, sentence1, sentence2, input_dic,
                                                 output_dic)

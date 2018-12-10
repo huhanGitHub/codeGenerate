@@ -47,6 +47,7 @@ def normalizeString(s):
     s = unicodeToAscii(s.lower().strip())
     #s = re.sub(r"([.!?])", r" \1", s)
     s = re.sub(r"[^a-zA-Z.!?,'\._!=]\+-\*/%\|&", r" ", s)
+    #s = re.sub(r'[^a-zA-Z0-9. ]+', r'', s)
     return s
 
 def readData(path):
@@ -60,17 +61,15 @@ def readData(path):
         lines[i]=normalizeString(lines[i])
         lines[i]=lines[i][1:len(lines[i])-1]
 
-    input_lang = Dictionary('input')
-    output_lang = Dictionary('output')
+    input_lang = Dictionary('Input Dic')
+    output_lang = Dictionary('Output Dic')
 
     return input_lang, output_lang, lines
 
 def filterPair(p):
     #print(p)
     pp=p.split('\',\'')
-    return len(pp[0].split(' ')) < MAX_LENGTH and \
-        len(pp[1].split(' ')) < MAX_LENGTH and len(pp[2].split(' ')) < MAX_LENGTH
-
+    return len(pp[1].split(' ')) < MAX_LENGTH and len(pp[2].split(' ')) < MAX_LENGTH and len(pp[3].split(' ')) < MAX_LENGTH
 
 def filterPairs(pairs):
     return [pair for pair in pairs if filterPair(pair)]
@@ -80,16 +79,24 @@ def prepareData(data_path=Clue_s_task_Data_path):
     input_lang, output_lang, pairs = readData(data_path)
     print("Read %s sentence pairs" % len(pairs))
     pairs = filterPairs(pairs)
-    print("Trimmed to %s sentence pairs" % len(pairs))
+
     print("Counting words...")
-    for line in pairs:
-        pair=line.split('\',\'')
-        pair[0]=pair[0][1:]
-        pair[2]=pair[2][:len(pair[2])-1]
+    for i in range(len(pairs)):
+        pair=pairs[i].split('\',\'')
+        pair[0] = re.sub(r'[^a-zA-Z0-9. ]+', r'', pair[0])
+        pair[1] = re.sub(r'[^a-zA-Z0-9. ]+', r'', pair[1])
+        pair[2] = re.sub(r'[^a-zA-Z0-9. ]+', r'', pair[2])
+        pair[3] = re.sub(r'[^a-zA-Z0-9. ]+', r'', pair[3])
+
+        #pair[0]=pair[0][1:]
+        #pair[2]=pair[2][:len(pair[2])-1]
         input_lang.addSentence(pair[0].strip())
         input_lang.addSentence(pair[1].strip())
+        input_lang.addSentence(pair[2].strip())
         #print(pair)
-        output_lang.addSentence(pair[2].strip())
+        output_lang.addSentence(pair[3].strip())
+        s=pair[0]+','+pair[1]+','+pair[2]+','+pair[3]
+        pairs[i]=s
 
     print("Counted words:")
     print(input_lang.name, input_lang.n_words)
@@ -128,8 +135,8 @@ def prepareData(data_path=Clue_s_task_Data_path):
     return input_lang, output_lang, train
 
 def indexesFromSentence(lang, sentence):
-    #print(sentence)
-    #print(lang.word2index)
+    # print(sentence)
+    # print(lang.word2index)
     return [lang.word2index[word] for word in sentence.split(' ')]
 
 def tensorFromSentence(lang, sentence):
@@ -138,14 +145,19 @@ def tensorFromSentence(lang, sentence):
     return torch.tensor(indexes, dtype=torch.long, device=device).view(-1, 1)
 
 def tensorsFromPair(pair, input_lang, output_lang):
-    pair = pair.split('\',\'')
-    pair[0] = pair[0][1:]
-    pair[2] = pair[2][:len(pair[2]) - 1]
+    #pair=pair.replace('\\\\', '')
+    pp = pair.split(',')
 
-    input_tensor_1 = tensorFromSentence(input_lang, pair[0])
-    input_tensor_2 = tensorFromSentence(input_lang, pair[1])
-    target_tensor = tensorFromSentence(output_lang, pair[2])
-    return (input_tensor_1, input_tensor_2, target_tensor)
+    # print(pp[0])
+    # print(pp[1])
+    # print(pp[2])
+    # print(pp[3])
+
+    input_tensor_1 = tensorFromSentence(input_lang, pp[0])
+    input_tensor_2 = tensorFromSentence(input_lang, pp[1])
+    input_tensor_3 = tensorFromSentence(input_lang, pp[2])
+    target_tensor = tensorFromSentence(output_lang, pp[3])
+    return (input_tensor_1, input_tensor_2, input_tensor_3, target_tensor)
 
 def asMinutes(s):
     m = math.floor(s / 60)
