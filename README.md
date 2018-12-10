@@ -11,3 +11,5 @@ We prepare a toy-data for debugging, it's in the 'data' directory.
 Run *API_plus_name.py* for Seq2Seq with clues as input only model;
 run *NL_only.py for Seq2Seq* with NL as input only model;
 run *without_transferred.py* for Seq2Seq without transferred clues model.
+
+## (4) updating
